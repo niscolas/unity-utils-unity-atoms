@@ -1,19 +1,18 @@
-﻿using NaughtyAttributes;
+﻿using Lean.Pool;
+using NaughtyAttributes;
 using UnityAtoms.BaseAtoms;
 using UnityAtoms.Tags;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Plugins.UnityAtomsUtils.Actions {
 	[CreateAssetMenu(
-		menuName = AtomsConstants.ActionsCreateAssetMenuPath + "(GameObject) => Instantiate",
+		menuName = AtomsConstants.ActionsCreateAssetMenuPath + "(" + nameof(GameObject) + ") => Instantiate",
 		order = AtomsConstants.CreateAssetMenuOrder)]
-	public class Instantiate : GameObjectAction {
+	public class InstantiateGameObject : GameObjectGameObjectFunction {
+		[FormerlySerializedAs("fixedPrefabRef")]
 		[SerializeField]
-		private bool useFixedPrefab;
-
-		[ShowIf(nameof(useFixedPrefab))]
-		[SerializeField]
-		private GameObjectReference fixedPrefabRef;
+		private GameObjectReference prefabRef;
 
 		[Header("Parent")]
 		[SerializeField]
@@ -38,30 +37,55 @@ namespace Plugins.UnityAtomsUtils.Actions {
 
 		[HideIf(nameof(dontUsePositionAndRotation))]
 		[SerializeField]
+		private Vector3Reference offsetRef;
+
+		[HideIf(nameof(dontUsePositionAndRotation))]
+		[SerializeField]
 		private QuaternionReference rotationRef;
 
-		public override void Do(UnityEngine.GameObject prefab) {
-			DoInstantiate(prefab);
+		public override GameObject Call(GameObject gameObjectPositionReference) {
+			return DoInstantiate(gameObjectPositionReference.transform.position);
 		}
 
-		public override void Do() {
-			DoInstantiate(fixedPrefabRef.Value);
+		public GameObject Call() {
+			return DoInstantiate();
 		}
 
-		private void DoInstantiate(UnityEngine.GameObject prefab) {
+		public void DoCall(GameObject gameObjectPositionReference) {
+			Call(gameObjectPositionReference);
+		}
+
+		public void DoCall() {
+			Call();
+		}
+
+		private GameObject DoInstantiate(Vector3? position = null) {
 			Transform parent = null;
 			if (hasParent) {
-				UnityEngine.GameObject parentGameObject = AtomTags.FindByTag(parentTag.Value);
-				if (!parentGameObject) {
+				GameObject parentGameObject = AtomTags.FindByTag(parentTag.Value);
+				if (parentGameObject) {
 					parent = parentGameObject.transform;
 				}
 			}
 
-			UnityEngine.GameObject instance = Instantiate(prefab, parent, instantiateInWorldSpace);
+			GameObject instance = LeanPool.Spawn(prefabRef.Value, parent, instantiateInWorldSpace);
+
+			Vector3 finalPosition = Vector3.zero;
+			Quaternion finalRotation = Quaternion.identity;
+
 			if (!dontUsePositionAndRotation) {
-				instance.transform.position = positionRef.Value;
-				instance.transform.rotation = rotationRef.Value;
+				finalPosition = positionRef.Value;
+				finalRotation = rotationRef.Value;
+
+				if (position != null) {
+					finalPosition = position.Value;
+				}
 			}
+
+			instance.transform.position = finalPosition + offsetRef.Value;
+			instance.transform.rotation = finalRotation;
+
+			return instance;
 		}
 	}
 }

@@ -7,7 +7,7 @@ using UnityEngine;
 namespace Plugins.UnityAtomsUtils.Actions {
 	[EditorIcon("atom-icon-purple")]
 	[CreateAssetMenu(menuName = AtomsConstants.ActionsCreateAssetMenuPath + "Int Math Operation")]
-	public class ApplyIntMathOperation : PerformMathOperationBase<
+	public class PerformIntMathOperation : PerformMathOperationBase<
 		int,
 		IntPair,
 		IntConstant,

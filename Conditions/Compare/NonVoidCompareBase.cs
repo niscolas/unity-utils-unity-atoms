@@ -17,7 +17,7 @@ namespace Plugins.UnityAtomsUtils.Conditions.Compare {
 		where T : IComparable
 		where TP : T {
 		public override bool Call(TP parameterOperand) {
-			return ComparisonTypeUtility<T>.Compare(parameterOperand, comparisonOperator, operand2);
+			return ComparisonUtility<T>.Compare(parameterOperand, comparisonOperator, operand2);
 		}
 	}
 }

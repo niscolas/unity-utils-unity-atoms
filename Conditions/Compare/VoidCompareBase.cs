@@ -20,7 +20,7 @@ namespace Plugins.UnityAtomsUtils.Conditions.Compare {
 		}
 		
 		public bool Call() {
-			return ComparisonTypeUtility<T>.Compare(operand1, comparisonOperator, operand2);
+			return ComparisonUtility<T>.Compare(operand1, comparisonOperator, operand2);
 		}
 	}
 }
