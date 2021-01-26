@@ -17,7 +17,7 @@ namespace Plugins.UnityAtomsUtils.Actions {
 		protected V operand1;
 
 		[SerializeField]
-		protected BasicMathOperation mathOperation;
+		protected MathOperation mathOperation;
 
 		[SerializeField]
 		protected R operand2;

@@ -9,17 +9,17 @@ namespace Plugins.UnityAtomsUtils.Functions {
 		order = AtomsConstants.CreateAssetMenuOrder)]
 	public class PerformFloatMathOperationFunc : FloatFloatFunction {
 		[SerializeField]
-		private BasicMathOperation mathOperation;
+		private MathOperation mathOperation;
 
 		[SerializeField]
 		private FloatReference operand2;
 
 		public override float Call(float value) {
 			return mathOperation switch {
-				BasicMathOperation.Sum => value + operand2.Value,
-				BasicMathOperation.Subtract => value - operand2.Value,
-				BasicMathOperation.Divide => value / operand2.Value,
-				BasicMathOperation.Multiply => value * operand2.Value,
+				MathOperation.Sum => value + operand2.Value,
+				MathOperation.Subtract => value - operand2.Value,
+				MathOperation.Divide => value / operand2.Value,
+				MathOperation.Multiply => value * operand2.Value,
 				_ => throw new ArgumentOutOfRangeException()
 			};
 		}

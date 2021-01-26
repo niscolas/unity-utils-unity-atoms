@@ -19,19 +19,19 @@ namespace Plugins.UnityAtomsUtils.Actions {
 		IntReference> {
 		public override void Do() {
 			switch (mathOperation) {
-				case BasicMathOperation.Sum:
+				case MathOperation.Sum:
 					operand1.Add(operand2);
 					break;
 
-				case BasicMathOperation.Subtract:
+				case MathOperation.Subtract:
 					operand1.Subtract(operand2);
 					break;
 
-				case BasicMathOperation.Divide:
+				case MathOperation.Divide:
 					operand1.DivideBy(operand2);
 					break;
 
-				case BasicMathOperation.Multiply:
+				case MathOperation.Multiply:
 					operand1.MultiplyBy(operand2);
 					break;
 

@@ -19,19 +19,19 @@ namespace Plugins.UnityAtomsUtils.Actions {
 		FloatReference> {
 		public override void Do() {
 			switch (mathOperation) {
-				case BasicMathOperation.Sum:
+				case MathOperation.Sum:
 					operand1.Value = (int) (operand1.Value + operand2.Value);
 					break;
 
-				case BasicMathOperation.Subtract:
+				case MathOperation.Subtract:
 					operand1.Value = (int) (operand1.Value - operand2.Value);
 					break;
 
-				case BasicMathOperation.Divide:
+				case MathOperation.Divide:
 					operand1.Value = (int) (operand1.Value / operand2.Value);
 					break;
 
-				case BasicMathOperation.Multiply:
+				case MathOperation.Multiply:
 					operand1.Value = (int) (operand1.Value * operand2.Value);
 					break;
 
