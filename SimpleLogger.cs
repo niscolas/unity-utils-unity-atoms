@@ -8,11 +8,18 @@ namespace Plugins.UnityAtomsUtils {
 		[SerializeField]
 		private StringReference defaultMessage;
 
+		[SerializeField]
+		private bool isActive = true;
+
 		public override void Do() {
-			Debug.Log(defaultMessage.Value);
+			DoLog(defaultMessage.Value);
 		}
 
 		public void DoLog(string message) {
+			if (!isActive) {
+				return;
+			}
+			
 			Debug.Log(message);
 		}
 	}
