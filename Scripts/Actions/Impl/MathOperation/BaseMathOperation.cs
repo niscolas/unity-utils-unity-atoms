@@ -1,0 +1,29 @@
+﻿using UnityAtoms;
+using UnityEngine;
+
+namespace Plugins.UnityAtomsUtils.Scripts.Actions.Impl.MathOperation {
+	[EditorIcon("atom-icon-purple")]
+	public abstract class BaseMathOperation<TOp1, TFixedOp2, TDynamicOp2> : AtomAction<TDynamicOp2>
+		where TOp1 : AtomBaseVariable {
+		[SerializeField]
+		protected TOp1 operand1;
+
+		[SerializeField]
+		protected MathUtils.MathOperation mathOperation;
+
+		[SerializeField]
+		private TFixedOp2 fixedOperand2;
+
+		protected abstract void Inner_Do(TDynamicOp2 operand2);
+
+		protected abstract TDynamicOp2 GetConverted(TFixedOp2 fixedOperand2);
+
+		public sealed override void Do(TDynamicOp2 dynamicOperand2) {
+			Inner_Do(dynamicOperand2);
+		}
+
+		public sealed override void Do() {
+			Inner_Do(GetConverted(fixedOperand2));
+		}
+	}
+}
