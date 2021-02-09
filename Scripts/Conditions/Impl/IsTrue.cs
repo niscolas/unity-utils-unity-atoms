@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace Plugins.UnityAtomsUtils.Scripts.Conditions.Impl {
 	[EditorIcon("atom-icon-teal")]
-	[CreateAssetMenu(menuName = AtomsConstants.ConditionsCreateAssetMenuPath + "(bool) => Check")]
-	public class CheckBool : BoolCondition {
+	[CreateAssetMenu(menuName = AtomsConstants.ConditionsCreateAssetMenuPath + "(bool) => Is True?")]
+	public class IsTrue : BoolCondition {
 		[SerializeField]
 		private bool invert;
 
