@@ -1,9 +1,9 @@
 ﻿using UnityAtoms;
 
 namespace Plugins.UnityAtomsUtils.Scripts.MonoBehaviourHelpers.Pipeline.SinglePipelines {
-	public abstract class BaseSingleAtomPipeline<
+	public abstract class BaseSinglePipeline<
 		T, TP, TConst, TV, TE1, TE2, TF, TVi, TR, TC> : 
-		BaseAtomPipeline<
+		BasePipeline<
 		T, TP, TConst, TV, TE1, TE2, TVi, TR, TC, T, TC, TF, TF>
 		where TP : struct, IPair<T>
 		where TConst : AtomBaseVariable<T>

@@ -2,7 +2,7 @@
 using UnityAtoms.BaseAtoms;
 
 namespace Plugins.UnityAtomsUtils.Scripts.MonoBehaviourHelpers.Pipeline.StandardPipelines {
-	public class FloatToStringAtomPipeline : BaseAtomPipeline<
+	public class FloatToIntPipeline : BasePipeline<
 		float,
 		FloatPair,
 		FloatConstant,
@@ -15,5 +15,5 @@ namespace Plugins.UnityAtomsUtils.Scripts.MonoBehaviourHelpers.Pipeline.Standard
 		int,
 		IntCondition,
 		FloatFloatFunction,
-		AtomFunction<int, float>> { }
+		IntFloatFunction> { }
 }

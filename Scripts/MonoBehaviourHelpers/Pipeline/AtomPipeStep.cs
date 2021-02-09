@@ -11,49 +11,47 @@ namespace Plugins.UnityAtomsUtils.Scripts.MonoBehaviourHelpers.Pipeline {
 		where TCExit : AtomCondition<TExit>
 		where TFEntryEntry : AtomFunction<TEntry, TEntry>
 		where TFExitEntry : AtomFunction<TExit, TEntry> {
-		private const float ConditionLabelWidth = 75f;
-
-		[HorizontalGroup("Step", Width = 0.25f)]
-		[VerticalGroup("Step/Column1")]
+		private const string BoxGroupName = "base"; 
+		
+		[BoxGroup(BoxGroupName, false)]
 		[SerializeField]
-		[HideLabel]
 		private PipeStepType type;
 
-		[VerticalGroup("Step/Column2")]
+		[BoxGroup(BoxGroupName, false)]
+		[Space]
 		[ShowIf(nameof(IsEntryConditionStep))]
-		[LabelText("Proceed if")]
-		[LabelWidth(ConditionLabelWidth)]
 		[SerializeField]
 		private TCEntry entryCondition;
 
-		[VerticalGroup("Step/Column2")]
+		[BoxGroup(BoxGroupName, false)]
+		[Space]
 		[ShowIf(nameof(IsExitConditionStep))]
-		[LabelText("Proceed if")]
-		[LabelWidth(ConditionLabelWidth)]
 		[SerializeField]
 		private TCExit exitCondition;
 
-		[VerticalGroup("Step/Column2")]
+		[BoxGroup(BoxGroupName, false)]
+		[Space]
 		[ShowIf(nameof(IsEntryEntryFilterStep))]
 		[HideLabel]
 		[SerializeField]
 		private TFEntryEntry entryEntryFilter;
 
-		[VerticalGroup("Step/Column2")]
+		[BoxGroup(BoxGroupName, false)]
+		[Space]
 		[ShowIf(nameof(IsExitEntryFilterStep))]
 		[HideLabel]
 		[SerializeField]
 		private TFExitEntry exitEntryFilter;
 
-		[VerticalGroup("Step/Column2")]
+		[BoxGroup(BoxGroupName, false)]
+		[Space]
 		[ShowIf(nameof(IsEntryEventStep))]
-		[HideLabel]
 		[SerializeField]
 		private UnityEvent<TEntry> entryEventCallback;
 
-		[VerticalGroup("Step/Column2")]
+		[BoxGroup(BoxGroupName, false)]
+		[Space]	
 		[ShowIf(nameof(IsExitEventStep))]
-		[HideLabel]
 		[SerializeField]
 		private UnityEvent<TExit> exitEventCallback;
 

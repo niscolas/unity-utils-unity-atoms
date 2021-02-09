@@ -4,8 +4,8 @@ using UnityEngine;
 namespace Plugins.UnityAtomsUtils.Scripts.Functions.Impl.Extractors {
 	[EditorIcon("atom-icon-sand")]
 	[CreateAssetMenu(menuName = AtomsConstants.FunctionsCreateAssetMenuPath + "(Collider) => Extract : GameObject")]
-	public class ExtractGameObjectFromCollider : BaseExtract<GameObject, Collider> {
-		protected override GameObject Extract(Collider entry) {
+	public class ExtractGameObjectFromCollider : GameObjectColliderFunction {
+		public override GameObject Call(Collider entry) {
 			return entry.gameObject;
 		}
 	}

@@ -2,7 +2,7 @@
 using UnityEngine;
 
 namespace Plugins.UnityAtomsUtils.Scripts.MonoBehaviourHelpers.Pipeline.SinglePipelines {
-	public class GameObjectAtomPipeline : BaseSingleAtomPipeline<
+	public class GameObjectPipeline : BaseSinglePipeline<
 		GameObject,
 		GameObjectPair,
 		GameObjectConstant,

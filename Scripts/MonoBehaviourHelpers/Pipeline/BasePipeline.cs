@@ -4,7 +4,7 @@ using UnityAtoms;
 using UnityEngine;
 
 namespace Plugins.UnityAtomsUtils.Scripts.MonoBehaviourHelpers.Pipeline {
-	public class BaseAtomPipeline<
+	public class BasePipeline<
 		TEntry, TPEntry, TConstEntry, TVEntry, TE1Entry, TE2Entry, TViEntry, TREntry, TCEntry,
 		TExit, TCExit, TFEntryEntry, TFExitEntry> : MonoBehaviour
 		where TCEntry : AtomCondition<TEntry>
@@ -21,8 +21,6 @@ namespace Plugins.UnityAtomsUtils.Scripts.MonoBehaviourHelpers.Pipeline {
 		[Serializable]
 		private class CurrentStep : AtomPipeStep<TEntry, TExit, TCEntry, TCExit, TFEntryEntry, TFExitEntry> { }
 
-		[Title("Entry")]
-		[HideLabel]
 		[SerializeField]
 		private TREntry fixedEntryValueRef;
 

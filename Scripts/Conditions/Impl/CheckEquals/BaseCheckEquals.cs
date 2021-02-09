@@ -5,10 +5,10 @@ namespace Plugins.UnityAtomsUtils.Scripts.Conditions.Impl.CheckEquals {
 	[EditorIcon("atom-icon-teal")]
 	public abstract class BaseCheckEquals<TOp1, TFixedOp2, TDynamicOp2> : AtomCondition<TDynamicOp2> {
 		[SerializeField]
-		protected TOp1 operand1;
+		protected bool invert;
 
 		[SerializeField]
-		protected bool invert;
+		protected TOp1 operand1;
 
 		[SerializeField]
 		private TFixedOp2 fixedOperand2;

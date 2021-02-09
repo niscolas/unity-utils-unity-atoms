@@ -6,8 +6,8 @@ namespace Plugins.UnityAtomsUtils.Scripts.Functions.Impl.Extractors {
 	[EditorIcon("atom-icon-sand")]
 	[CreateAssetMenu(
 		menuName = AtomsConstants.FunctionsCreateAssetMenuPath + "(ColliderGameObject) => Extract : GameObject")]
-	public class ExtractGameObjectFromColliderGameObject : BaseExtract<GameObject, ColliderGameObject> {
-		protected override GameObject Extract(ColliderGameObject entry) {
+	public class ExtractGameObjectFromColliderGameObject : GameObjectColliderGameObjectFunction {
+		public override GameObject Call(ColliderGameObject entry) {
 			return entry.GameObject;
 		}
 	}

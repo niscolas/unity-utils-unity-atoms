@@ -1,8 +1,9 @@
 ﻿using UnityAtoms;
 using UnityAtoms.BaseAtoms;
+using UnityEngine;
 
 namespace Plugins.UnityAtomsUtils.Scripts.MonoBehaviourHelpers.Pipeline.StandardPipelines {
-	public class IntToFloatAtomPipeline : BaseAtomPipeline<
+	public class IntStringPipeline : BasePipeline<
 		int,
 		IntPair,
 		IntConstant,
@@ -12,8 +13,8 @@ namespace Plugins.UnityAtomsUtils.Scripts.MonoBehaviourHelpers.Pipeline.Standard
 		IntVariableInstancer,
 		IntReference,
 		IntCondition,
-		float,
-		FloatCondition,
+		string,
+		StringCondition,
 		IntIntFunction,
-		AtomFunction<float, int>> { }
+		StringIntFunction> { }
 }
