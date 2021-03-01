@@ -20,7 +20,9 @@ namespace Plugins.UnityAtomsUtils.Scripts.Functions.Impl {
 		private bool searchInChildren = true;
 
 		public override GameObject Call(GameObject entry) {
-			return entry.FindWithTagInHierarchy(tag.Value, searchInParents, searchInChildren).FirstOrDefault();
+			return !entry 
+				? null 
+				: entry.FindWithTagInHierarchy(tag.Value, searchInParents, searchInChildren).FirstOrDefault();
 		}
 	}
 }

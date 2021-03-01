@@ -1,10 +1,17 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Sirenix.Utilities;
 using UnityAtoms.Tags;
 using UnityEngine;
 
 namespace Plugins.UnityAtomsUtils.Scripts.ClassExtensions {
 	public static class GameObjectExtensions {
+		private const string RootTagName = "Root";
+
+		public static GameObject GetRoot(this GameObject gameObject) {
+			return gameObject.FindWithTagInHierarchy(RootTagName, true, false).FirstOrDefault();
+		}
+
 		public static IEnumerable<GameObject> FindWithTagInHierarchy(
 			this GameObject startGameObject, string tag, bool searchInParents = true, bool searchInChildren = true
 		) {

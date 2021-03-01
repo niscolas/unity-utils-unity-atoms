@@ -4,8 +4,8 @@ using UnityEngine;
 namespace Plugins.UnityAtomsUtils.Scripts.Functions.Impl.Extractors {
 	[EditorIcon("atom-icon-sand")]
 	[CreateAssetMenu(menuName = AtomsConstants.FunctionsCreateAssetMenuPath + "(int) => Extract : string")]
-	public class ExtractStringFromInt : StringIntFunction {
-		public override string Call(int entry) {
+	public class ExtractStringFromInt : BaseExtractor<string, int> {
+		protected override string Extract(int entry) {
 			return entry.ToString();
 		}
 	}

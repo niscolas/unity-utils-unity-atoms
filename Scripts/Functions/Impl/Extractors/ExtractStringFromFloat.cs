@@ -5,8 +5,8 @@ using UnityEngine;
 namespace Plugins.UnityAtomsUtils.Scripts.Functions.Impl.Extractors {
 	[EditorIcon("atom-icon-sand")]
 	[CreateAssetMenu(menuName = AtomsConstants.FunctionsCreateAssetMenuPath + "(float) => Extract : string")]
-	public class ExtractStringFromFloat : StringFloatFunction {
-		public override string Call(float entry) {
+	public class ExtractStringFromFloat : BaseExtractor<string, float> {
+		protected override string Extract(float entry) {
 			return entry.ToString(CultureInfo.InvariantCulture);
 		}
 	}
