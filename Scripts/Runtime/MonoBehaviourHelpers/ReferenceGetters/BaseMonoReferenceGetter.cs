@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Plugins.UnityAtomsUtils.Scripts.MonoBehaviourHelpers.ReferenceGetters {
+namespace Plugins.UnityAtomsUtils.Scripts.Runtime.MonoBehaviourHelpers.ReferenceGetters {
 	public abstract class BaseMonoReferenceGetter<T, P, C, V, E1, E2, F, VI, R> : MonoBehaviour
 		where R : AtomReference<T, P, C, V, E1, E2, F, VI>
 		where P : struct, IPair<T>

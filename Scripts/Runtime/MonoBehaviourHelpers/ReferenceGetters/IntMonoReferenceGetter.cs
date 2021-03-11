@@ -1,4 +1,5 @@
-﻿using UnityAtoms.BaseAtoms;
+﻿using Plugins.UnityAtomsUtils.Scripts.Runtime.MonoBehaviourHelpers.ReferenceGetters;
+using UnityAtoms.BaseAtoms;
 
 namespace Plugins.UnityAtomsUtils.Scripts.MonoBehaviourHelpers.ReferenceGetters {
 	public class IntMonoReferenceGetter : BaseMonoReferenceGetter<

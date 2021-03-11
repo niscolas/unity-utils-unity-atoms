@@ -8,7 +8,7 @@ namespace Plugins.UnityAtomsUtils.Scripts.ClassExtensions {
 	public static class GameObjectExtensions {
 		private const string RootTagName = "Root";
 
-		public static GameObject GetRoot(this GameObject gameObject) {
+		public static GameObject Root(this GameObject gameObject) {
 			return gameObject.FindWithTagInHierarchy(RootTagName, true, false).FirstOrDefault();
 		}
 
