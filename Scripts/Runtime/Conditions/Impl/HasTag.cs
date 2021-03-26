@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using Plugins.UnityAtomsUtils.Scripts.ClassExtensions;
+using Plugins.UnityAtomsUtils.Scripts.Runtime.ClassExtensions;
 using UnityAtoms;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;

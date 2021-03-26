@@ -1,0 +1,31 @@
+{
+    "name": "UnityAtomsUtils.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:116d4f7e6b26eaa4da4bed394e06c9ea",
+        "GUID:598750ec792e4472396f5fbc092caa65",
+        "GUID:87264ae76e36244ae9adf5b5fbf7ca19",
+        "GUID:f1d4b8bb659655a49a399c16aa61c705",
+        "GUID:9bc48b3aaac2247dbad05ace2c2d11d7",
+        "GUID:35405fc9d817249958711883902db606",
+        "GUID:29492541a59d04a81b47a7f225e8a22d",
+        "GUID:14165214884ae4a619bfb290f28194a7",
+        "GUID:c787b21d1c388634c97d82c717de67a3",
+        "GUID:39d90d64ded314c27a72b2586cd86439",
+        "GUID:7cead87e598844809ae298f71540fc18"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Sirenix.OdinInspector.Attributes.dll",
+        "Sirenix.OdinInspector.Editor.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
