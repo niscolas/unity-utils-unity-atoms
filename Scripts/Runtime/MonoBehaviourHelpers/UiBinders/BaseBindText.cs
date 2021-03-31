@@ -1,20 +1,16 @@
-﻿using System;
-using TMPro;
+﻿using TMPro;
 using UnityAtoms;
-using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
 namespace Plugins.UnityAtomsUtils.Scripts.Runtime.MonoBehaviourHelpers.UiBinders
 {
-	public abstract class BaseBindText<T, P, C, V, E1, E2, EI, ER, F, VI, R> : MonoBehaviour
-		where R : AtomReference<T, P, C, V, E1, E2, F, VI>
+	public abstract class BaseBindText<T, P, V, E1, E2, EI, ER, F, VI> : MonoBehaviour, IAtomListener<T>
 		where P : struct, IPair<T>
-		where C : AtomBaseVariable<T>
 		where V : AtomVariable<T, P, E1, E2, F>
 		where E1 : AtomEvent<T>
 		where E2 : AtomEvent<P>
 		where EI : AtomEventInstancer<T, E1>
-		where ER : AtomEventReference<T, V, E1, VI, EI>
+		where ER : AtomEventReference<T, V, E1, VI, EI>, new()
 		where F : AtomFunction<T, T>
 		where VI : AtomVariableInstancer<V, P, T, E1, E2, F>
 	{
@@ -22,39 +18,37 @@ namespace Plugins.UnityAtomsUtils.Scripts.Runtime.MonoBehaviourHelpers.UiBinders
 		private TMP_Text _textComponent;
 
 		[SerializeField]
+		private ER _eventReference;
+
+		[SerializeField]
+		private bool _replayEventBuffer;
+
+		[SerializeField]
 		private V _variable;
 
-		protected abstract string GetFormattedText(T value);
-
-		private void Awake()
-		{
-			RegisterToDynamicEvent();
-		}
+		protected abstract string FormatText(T value);
 
 		private void OnEnable()
 		{
-			UpdateText();
+			RegisterSelf();
 		}
 
-		private void RegisterToDynamicEvent()
+		private void RegisterSelf()
 		{
-			if (!_variable) return;
+			if (_eventReference == null || _eventReference.Event == null) return;
 
-			E1 varEvent = _variable.GetOrCreateEvent<E1>();
-			varEvent.Register(UpdateText);
+			_eventReference.Event.RegisterListener(this, _replayEventBuffer);
+		}
+
+		public void OnEventRaised(T item)
+		{
+			UpdateText(item);
 		}
 
 		public void UpdateText(T dynamicValue)
 		{
-			string text = GetFormattedText(dynamicValue);
+			string text = FormatText(dynamicValue);
 			SetText(text);
-		}
-
-		public void UpdateText()
-		{
-			if (!_variable) return;
-
-			UpdateText(_variable.Value);
 		}
 
 		private void SetText(string text)

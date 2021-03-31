@@ -5,17 +5,15 @@ namespace Plugins.UnityAtomsUtils.Scripts.Runtime.MonoBehaviourHelpers.UiBinders
 	public class BindIntText : BaseBindText<
 		int,
 		IntPair,
-		IntConstant,
 		IntVariable,
 		IntEvent,
 		IntPairEvent,
 		IntEventInstancer,
 		IntEventReference,
 		IntIntFunction,
-		IntVariableInstancer,
-		IntReference>
+		IntVariableInstancer>
 	{
-		protected override string GetFormattedText(int value)
+		protected override string FormatText(int value)
 		{
 			return value.ToString();
 		}
