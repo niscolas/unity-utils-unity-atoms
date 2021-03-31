@@ -1,0 +1,3 @@
+[submodule "Scripts/MathUtils"]
+	path = Scripts/MathUtils
+	url = https://github.com/niscolas/basic-math-utils.git
