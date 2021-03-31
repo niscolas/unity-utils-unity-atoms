@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
+using MathUtils;
 using Plugins.Scripts.ClassExtensions;
-using Plugins.Scripts.MathUtils;
 using Sirenix.OdinInspector;
 using UnityAtoms.BaseAtoms;
 using UnityAtoms.Tags;

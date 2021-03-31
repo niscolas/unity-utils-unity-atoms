@@ -1,5 +1,5 @@
 ﻿using System;
-using Plugins.Scripts.MathUtils;
+using MathUtils;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 

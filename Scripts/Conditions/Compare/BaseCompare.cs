@@ -1,4 +1,4 @@
-﻿using Plugins.Scripts.MathUtils;
+﻿using MathUtils;
 using UnityAtoms;
 using UnityEngine;
 

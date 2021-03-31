@@ -1,5 +1,5 @@
 ﻿using System;
-using Plugins.Scripts.MathUtils;
+using MathUtils;
 using UnityEngine;
 
 namespace Plugins.Scripts.Functions.MathOperationResult
