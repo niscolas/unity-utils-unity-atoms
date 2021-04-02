@@ -23,9 +23,6 @@ namespace Plugins.Scripts.MonoBehaviourHelpers.UiBinders
 		[SerializeField]
 		private bool _replayEventBuffer;
 
-		[SerializeField]
-		private V _variable;
-
 		private void OnEnable()
 		{
 			RegisterSelf();

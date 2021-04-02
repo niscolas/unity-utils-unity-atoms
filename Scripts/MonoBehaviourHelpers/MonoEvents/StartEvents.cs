@@ -1,6 +1,6 @@
 ﻿namespace Plugins.Scripts.MonoBehaviourHelpers.MonoEvents
 {
-	public class StartMonoEvents : BaseMonoEvents
+	public class StartEvents : BaseMonoEvents
 	{
 		private void Start()
 		{
