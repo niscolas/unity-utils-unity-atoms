@@ -2,7 +2,7 @@
 using MathUtils;
 using UnityEngine;
 
-namespace Plugins.Scripts.Functions.MathOperationResult
+namespace UnityAtomsUtils.Functions.MathOperationResult
 {
 	[Serializable]
 	public struct MathOperationData<TR>

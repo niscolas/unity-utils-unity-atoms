@@ -1,6 +1,6 @@
 ﻿using UnityAtoms.BaseAtoms;
 
-namespace Plugins.Scripts.MonoBehaviourHelpers.MonoInputInterpreters
+namespace UnityAtomsUtils.MonoBehaviourHelpers.MonoInputInterpreters
 {
 	public class FloatMonoInputInterpreter : BaseMonoInputInterpreter<
 		float,

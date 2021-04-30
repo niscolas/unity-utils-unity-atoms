@@ -1,6 +1,6 @@
 ﻿using UnityAtoms.BaseAtoms;
 
-namespace Plugins.Scripts.MonoBehaviourHelpers
+namespace UnityAtomsUtils.MonoBehaviourHelpers
 {
 	public class ImprovedSyncGameObjectToList : SyncGameObjectToList { }
 }

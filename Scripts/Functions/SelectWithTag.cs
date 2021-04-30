@@ -1,11 +1,11 @@
 ﻿using System.Linq;
-using Plugins.Scripts.ClassExtensions;
+using Sirenix.OdinInspector;
 using UnityAtoms;
 using UnityAtoms.BaseAtoms;
+using UnityAtomsUtils.Extensions;
 using UnityEngine;
-using GameObjectGameObjectFunction = UnityAtoms.MonoHooks.GameObjectGameObjectFunction;
 
-namespace Plugins.Scripts.Functions
+namespace UnityAtomsUtils.Functions
 {
 	[EditorIcon("atom-icon-sand")]
 	[CreateAssetMenu(
@@ -16,16 +16,36 @@ namespace Plugins.Scripts.Functions
 		private StringConstant tag;
 
 		[SerializeField]
+		private bool _selectFromRoot;
+
+		[HideIf(nameof(_selectFromRoot))]
+		[SerializeField]
 		private bool searchInParents = true;
 
+		[HideIf(nameof(_selectFromRoot))]
 		[SerializeField]
 		private bool searchInChildren = true;
 
 		public override GameObject Call(GameObject entry)
 		{
-			return !entry
-				? null
-				: entry.FindWithTagInHierarchy(tag.Value, searchInParents, searchInChildren).FirstOrDefault();
+			if (!entry || !tag) return default;
+
+			GameObject result;
+
+			if (_selectFromRoot)
+			{
+				result = entry
+					.FindWithTagFromRoot(tag.Value)
+					.FirstOrDefault();
+			}
+			else
+			{
+				result = entry
+					.FindWithTagInHierarchy(tag.Value, searchInParents, searchInChildren)
+					.FirstOrDefault();
+			}
+
+			return result;
 		}
 	}
 }

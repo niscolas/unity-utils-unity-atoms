@@ -1,7 +1,7 @@
 ﻿using UnityAtoms;
 using UnityEngine;
 
-namespace Plugins.Scripts.Actions.MathOperation
+namespace UnityAtomsUtils.Actions.MathOperation
 {
 	[EditorIcon("atom-icon-purple")]
 	public abstract class BaseMathOperation<TOp1, TFixedOp2, TDynamicOp2> : AtomAction<TDynamicOp2>

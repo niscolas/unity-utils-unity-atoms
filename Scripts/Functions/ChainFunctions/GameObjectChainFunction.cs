@@ -1,7 +1,7 @@
 ﻿using UnityAtoms;
 using UnityEngine;
 
-namespace Plugins.Scripts.Functions.ChainFunctions
+namespace UnityAtomsUtils.Functions.ChainFunctions
 {
 	[EditorIcon("atom-icon-sand")]
 	[CreateAssetMenu(menuName = Constants.FunctionsCreateAssetMenuPath + "(GameObject) => Chain Function : GameObject")]

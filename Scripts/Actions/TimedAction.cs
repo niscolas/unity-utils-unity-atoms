@@ -5,7 +5,7 @@ using UnityAtoms.BaseAtoms;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Plugins.Scripts.Actions
+namespace UnityAtomsUtils.Actions
 {
 	[CreateAssetMenu(
 		menuName = Constants.ActionsCreateAssetMenuPath + "(float) => Timed Action")]

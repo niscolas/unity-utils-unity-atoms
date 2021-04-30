@@ -3,7 +3,7 @@ using UnityAtoms;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
-namespace Plugins.Scripts.Conditions.Compare
+namespace UnityAtomsUtils.Conditions.Compare
 {
 	[EditorIcon("atom-icon-teal")]
 	[CreateAssetMenu(menuName = Constants.ConditionsCreateAssetMenuPath + "(int) => Compare?")]

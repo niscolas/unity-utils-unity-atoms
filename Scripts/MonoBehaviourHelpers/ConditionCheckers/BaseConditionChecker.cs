@@ -3,7 +3,7 @@ using UnityAtoms;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Plugins.Scripts.MonoBehaviourHelpers.ConditionCheckers
+namespace UnityAtomsUtils.MonoBehaviourHelpers.ConditionCheckers
 {
 	public class BaseConditionChecker<T, P, C, V, E1, E2, F, VI, TR> : MonoBehaviour
 		where TR : AtomReference<T, P, C, V, E1, E2, F, VI>

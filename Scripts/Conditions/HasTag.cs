@@ -1,11 +1,11 @@
 ﻿using System.Linq;
-using Plugins.Scripts.ClassExtensions;
 using UnityAtoms;
 using UnityAtoms.BaseAtoms;
+using UnityAtomsUtils.Extensions;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace Plugins.Scripts.Conditions
+namespace UnityAtomsUtils.Conditions
 {
 	[CreateAssetMenu(
 		menuName = Constants.ConditionsCreateAssetMenuPath + "(GameObject) => Has Tag?")]

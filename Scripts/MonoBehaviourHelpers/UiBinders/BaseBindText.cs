@@ -1,8 +1,9 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityAtoms;
 using UnityEngine;
 
-namespace Plugins.Scripts.MonoBehaviourHelpers.UiBinders
+namespace UnityAtomsUtils.MonoBehaviourHelpers.UiBinders
 {
 	public abstract class BaseBindText<T, P, V, E1, E2, EI, ER, F, VI> : MonoBehaviour, IAtomListener<T>
 		where P : struct, IPair<T>
@@ -28,6 +29,11 @@ namespace Plugins.Scripts.MonoBehaviourHelpers.UiBinders
 			RegisterSelf();
 		}
 
+		private void OnDisable()
+		{
+			Unregister();
+		}
+
 		public void OnEventRaised(T item)
 		{
 			UpdateText(item);
@@ -37,12 +43,16 @@ namespace Plugins.Scripts.MonoBehaviourHelpers.UiBinders
 
 		private void RegisterSelf()
 		{
-			if (_eventReference == null || _eventReference.Event == null)
-			{
-				return;
-			}
+			if (_eventReference == null || _eventReference.Event == null) return;
 
 			_eventReference.Event.RegisterListener(this, _replayEventBuffer);
+		}
+
+		private void Unregister()
+		{
+			if (_eventReference == null || _eventReference.Event == null) return;
+
+			_eventReference.Event.UnregisterListener(this);
 		}
 
 		public void UpdateText(T dynamicValue)

@@ -2,7 +2,7 @@
 using UnityAtoms;
 using UnityEngine;
 
-namespace Plugins.Scripts.Conditions.Compare
+namespace UnityAtomsUtils.Conditions.Compare
 {
 	[EditorIcon("atom-icon-teal")]
 	public abstract class BaseCompare<TOp1, TFixedOp2, TDynamicOp2> : AtomCondition<TDynamicOp2>

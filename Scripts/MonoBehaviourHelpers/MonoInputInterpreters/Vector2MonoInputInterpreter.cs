@@ -1,7 +1,7 @@
 ﻿using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
-namespace Plugins.Scripts.MonoBehaviourHelpers.MonoInputInterpreters
+namespace UnityAtomsUtils.MonoBehaviourHelpers.MonoInputInterpreters
 {
 	public class Vector2MonoInputInterpreter : BaseMonoInputInterpreter<
 		Vector2,

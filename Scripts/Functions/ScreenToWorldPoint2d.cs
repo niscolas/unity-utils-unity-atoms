@@ -2,7 +2,7 @@
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
-namespace Plugins.Scripts.Functions
+namespace UnityAtomsUtils.Functions
 {
 	[EditorIcon("atom-icon-sand")]
 	[CreateAssetMenu(menuName =

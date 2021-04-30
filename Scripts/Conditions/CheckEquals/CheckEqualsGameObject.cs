@@ -2,7 +2,7 @@
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
-namespace Plugins.Scripts.Conditions.CheckEquals
+namespace UnityAtomsUtils.Conditions.CheckEquals
 {
 	[EditorIcon("atom-icon-teal")]
 	[CreateAssetMenu(menuName =

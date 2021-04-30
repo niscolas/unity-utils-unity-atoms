@@ -1,6 +1,6 @@
 ﻿using UnityAtoms.BaseAtoms;
 
-namespace Plugins.Scripts.MonoBehaviourHelpers.UiBinders
+namespace UnityAtomsUtils.MonoBehaviourHelpers.UiBinders
 {
 	public class BindIntText : BaseBindText<
 		int,

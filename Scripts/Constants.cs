@@ -1,9 +1,11 @@
-﻿namespace Plugins.Scripts
+﻿namespace UnityAtomsUtils
 {
 	public static class Constants
 	{
 		public const int CreateAssetMenuOrder = -20;
 
+		public const string RootTagValue = "Root";
+		
 		public const string BaseCreateAssetMenuPath = "Unity Atoms/";
 		public const string ActionsCreateAssetMenuPath = BaseCreateAssetMenuPath + "Actions/";
 		public const string SceneManagementCreateAssetMenuPath = ActionsCreateAssetMenuPath + "Scene Management/";

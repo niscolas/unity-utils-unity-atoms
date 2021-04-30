@@ -1,7 +1,7 @@
 ﻿using UnityAtoms;
 using UnityEngine;
 
-namespace Plugins.Scripts.Conditions
+namespace UnityAtomsUtils.Conditions
 {
 	[EditorIcon("atom-icon-teal")]
 	[CreateAssetMenu(menuName = Constants.ConditionsCreateAssetMenuPath + "() => Is Editor?")]

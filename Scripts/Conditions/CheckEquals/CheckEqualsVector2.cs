@@ -1,7 +1,7 @@
 ﻿using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
-namespace Plugins.Scripts.Conditions.CheckEquals
+namespace UnityAtomsUtils.Conditions.CheckEquals
 {
 	[CreateAssetMenu(menuName = Constants.ConditionsCreateAssetMenuPath + "(Vector2) => Equals?")]
 	public class CheckEqualsVector2 : BaseCheckEquals<Vector2Reference, Vector2Reference, Vector2>

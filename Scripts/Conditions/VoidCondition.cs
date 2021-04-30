@@ -1,6 +1,6 @@
 ﻿using UnityAtoms;
 
-namespace Plugins.Scripts.Conditions
+namespace UnityAtomsUtils.Conditions
 {
 	[EditorIcon("atom-icon-teal")]
 	public abstract class VoidCondition : AtomCondition<Void>

@@ -1,7 +1,7 @@
 ﻿using UnityAtoms;
 using UnityEngine;
 
-namespace Plugins.Scripts.Conditions.CheckEquals
+namespace UnityAtomsUtils.Conditions.CheckEquals
 {
 	[EditorIcon("atom-icon-teal")]
 	public abstract class BaseCheckEquals<TOp1, TFixedOp2, TDynamicOp2> : AtomCondition<TDynamicOp2>

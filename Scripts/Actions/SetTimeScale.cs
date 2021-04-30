@@ -1,7 +1,7 @@
 ﻿using UnityAtoms;
 using UnityEngine;
 
-namespace Plugins.Scripts.Actions
+namespace UnityAtomsUtils.Actions
 {
 	[CreateAssetMenu(
 		menuName = Constants.ActionsCreateAssetMenuPath + "(float) => Set Time Scale")]

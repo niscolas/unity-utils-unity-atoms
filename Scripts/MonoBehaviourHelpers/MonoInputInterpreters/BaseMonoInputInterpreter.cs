@@ -3,7 +3,7 @@ using UnityAtoms.BaseAtoms;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Plugins.Scripts.MonoBehaviourHelpers.MonoInputInterpreters
+namespace UnityAtomsUtils.MonoBehaviourHelpers.MonoInputInterpreters
 {
 	public abstract class BaseMonoInputInterpreter<T, P, C, V, E1, E2, EI, ER, F, VI, R> : MonoBehaviour
 		where T : struct

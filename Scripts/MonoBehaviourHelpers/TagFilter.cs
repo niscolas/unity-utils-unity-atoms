@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using MathUtils;
-using Plugins.Scripts.ClassExtensions;
 using Sirenix.OdinInspector;
 using UnityAtoms.BaseAtoms;
 using UnityAtoms.Tags;
+using UnityAtomsUtils.Extensions;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Plugins.Scripts.MonoBehaviourHelpers
+namespace UnityAtomsUtils.MonoBehaviourHelpers
 {
 	public class TagFilter : MonoBehaviour
 	{

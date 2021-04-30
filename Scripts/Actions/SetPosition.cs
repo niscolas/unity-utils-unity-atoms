@@ -2,7 +2,7 @@
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
-namespace Plugins.Scripts.Actions
+namespace UnityAtomsUtils.Actions
 {
 	[CreateAssetMenu(
 		menuName = Constants.ActionsCreateAssetMenuPath + "(GameObject) => Set Position")]

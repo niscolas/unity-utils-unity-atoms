@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Plugins.Scripts.Actions.SetAnimatorParam
+namespace UnityAtomsUtils.Actions.SetAnimatorParam
 {
 	[CreateAssetMenu(
 		menuName = Constants.ActionsCreateAssetMenuPath + "(Animator) => Set Bool")]

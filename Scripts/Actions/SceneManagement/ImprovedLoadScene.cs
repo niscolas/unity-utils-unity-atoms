@@ -3,7 +3,7 @@ using UnityAtoms.SceneMgmt;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Plugins.Scripts.Actions.SceneManagement
+namespace UnityAtomsUtils.Actions.SceneManagement
 {
 	[EditorIcon("atom-icon-purple")]
 	[CreateAssetMenu(

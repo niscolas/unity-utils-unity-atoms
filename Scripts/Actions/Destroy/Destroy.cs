@@ -2,7 +2,7 @@
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
-namespace Plugins.Scripts.Actions.Destroy
+namespace UnityAtomsUtils.Actions.Destroy
 {
 	[CreateAssetMenu(
 		menuName = Constants.ActionsCreateAssetMenuPath +

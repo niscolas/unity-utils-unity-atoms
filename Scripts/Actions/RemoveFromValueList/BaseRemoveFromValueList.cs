@@ -1,7 +1,7 @@
 ﻿using UnityAtoms;
 using UnityEngine;
 
-namespace Plugins.Scripts.Actions.RemoveFromValueList
+namespace UnityAtomsUtils.Actions.RemoveFromValueList
 {
 	public abstract class BaseRemoveFromValueList<T, E, VL> : AtomAction<T>
 		where VL : AtomValueList<T, E>

@@ -1,7 +1,7 @@
 ﻿using UnityAtoms;
 using UnityEngine;
 
-namespace Plugins.Scripts.Functions.ChainFunctions
+namespace UnityAtomsUtils.Functions.ChainFunctions
 {
 	[EditorIcon("atom-icon-sand")]
 	public abstract class BaseChainFunction<T> : AtomFunction<T, T>

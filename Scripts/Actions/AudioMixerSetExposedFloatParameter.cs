@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
-namespace Plugins.Scripts.Actions
+namespace UnityAtomsUtils.Actions
 {
 	[CreateAssetMenu(
 		menuName = Constants.ActionsCreateAssetMenuPath + "(float) => Set Exposed Audio Mixer Parameter")]

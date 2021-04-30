@@ -2,7 +2,7 @@
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
-namespace Plugins.Scripts.Actions.SetAnimatorParam
+namespace UnityAtomsUtils.Actions.SetAnimatorParam
 {
 	public class BaseSetAnimatorParam<T> : AtomAction<Animator>
 	{

@@ -1,7 +1,7 @@
 ﻿using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
-namespace Plugins.Scripts.Functions
+namespace UnityAtomsUtils.Functions
 {
 	[CreateAssetMenu(
 		menuName = Constants.FunctionsCreateAssetMenuPath + "(float) => Log : float ")]

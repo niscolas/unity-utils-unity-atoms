@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Plugins.Scripts.Actions.SceneManagement
+namespace UnityAtomsUtils.Actions.SceneManagement
 {
 	[CreateAssetMenu(
 		menuName = Constants.SceneManagementCreateAssetMenuPath + "() => Reload Current Scene")]

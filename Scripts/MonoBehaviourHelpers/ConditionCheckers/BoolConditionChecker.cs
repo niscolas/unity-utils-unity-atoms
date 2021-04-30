@@ -1,6 +1,6 @@
 ﻿using UnityAtoms.BaseAtoms;
 
-namespace Plugins.Scripts.MonoBehaviourHelpers.ConditionCheckers
+namespace UnityAtomsUtils.MonoBehaviourHelpers.ConditionCheckers
 {
 	public class BoolConditionChecker : BaseConditionChecker<
 		bool,

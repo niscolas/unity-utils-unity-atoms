@@ -2,7 +2,7 @@
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
-namespace Plugins.Scripts.MonoBehaviourHelpers
+namespace UnityAtomsUtils.MonoBehaviourHelpers
 {
 	public class RichTextUpdater : MonoBehaviour
 	{

@@ -3,7 +3,7 @@ using MathUtils;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
-namespace Plugins.Scripts.Functions.MathOperationResult
+namespace UnityAtomsUtils.Functions.MathOperationResult
 {
 	[CreateAssetMenu(
 		menuName = Constants.FunctionsCreateAssetMenuPath + "(float) => Math Operation : float",
