@@ -22,7 +22,7 @@ namespace Plugins.UnityAtomsUtils.Scripts.MonoBehaviourHelpers
 		{
 			get
 			{
-				if (_value.IsNull())
+				if (_value.IsUnityNull())
 				{
 					if (!SearchRoot)
 					{

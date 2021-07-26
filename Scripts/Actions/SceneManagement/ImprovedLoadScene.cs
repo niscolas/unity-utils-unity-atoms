@@ -2,6 +2,7 @@
 using UnityAtoms.SceneMgmt;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 namespace UnityAtomsUtils.Actions.SceneManagement
 {
@@ -10,15 +11,19 @@ namespace UnityAtomsUtils.Actions.SceneManagement
 		menuName = Constants.SceneManagementCreateAssetMenuPath + "Improved Change Scene")]
 	public class ImprovedLoadScene : AtomAction
 	{
-		[SerializeField]
-		private SceneFieldReference sceneFieldReference;
+		[FormerlySerializedAs("sceneFieldReference"), SerializeField]
+		private SceneFieldReference _scene;
 
-		[SerializeField]
-		private LoadSceneMode loadSceneMode;
+		[FormerlySerializedAs("loadSceneMode"), SerializeField]
+		private LoadSceneMode _loadSceneMode;
 
 		public override void Do()
 		{
-			SceneManager.LoadScene(sceneFieldReference.Value.BuildIndex, loadSceneMode);
+			bool isSceneLoaded = SceneManager.GetSceneByBuildIndex(_scene.Value.BuildIndex).isLoaded;
+
+			if (isSceneLoaded) return;
+
+			SceneManager.LoadScene(_scene.Value.BuildIndex, _loadSceneMode);
 		}
 	}
 }

@@ -13,10 +13,6 @@ namespace UnityAtomsUtils.Conditions.Compare
 		[SerializeField]
 		protected ComparisonOperator _comparisonOperator;
 
-		[Header("Fixed Operand 2")]
-		[SerializeField]
-		private bool _useFixedOperand2;
-
 		[SerializeField]
 		private TFixedOp2 _fixedOperand2;
 
@@ -24,25 +20,17 @@ namespace UnityAtomsUtils.Conditions.Compare
 
 		protected abstract TDynamicOp2 GetConverted(TFixedOp2 fixedOperand2);
 
-		public sealed override bool Call(TDynamicOp2 dynamicOperand2)
+		public bool Call()
 		{
-			bool result;
-			if (!_useFixedOperand2)
-			{
-				result = Inner_Call(dynamicOperand2);
-			}
-			else
-			{
-				result = Call();
-			}
+			TDynamicOp2 fixedOperand2 = GetConverted(_fixedOperand2);
+			bool result = Call(fixedOperand2);
 
 			return result;
 		}
 
-		public bool Call()
+		public sealed override bool Call(TDynamicOp2 dynamicOperand2)
 		{
-			TDynamicOp2 fixedOperand2 = GetConverted(_fixedOperand2);
-			bool result = Inner_Call(fixedOperand2);
+			bool result = Inner_Call(dynamicOperand2);
 
 			return result;
 		}

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using MathUtils;
 using Sirenix.OdinInspector;
 using UnityAtoms.BaseAtoms;
@@ -11,6 +12,9 @@ namespace UnityAtomsUtils.MonoBehaviourHelpers
 {
 	public class TagFilter : MonoBehaviour
 	{
+		[SerializeField]
+		private bool _filterRoot;
+
 		[Required]
 		[SerializeField]
 		private List<StringConstant> tags;
@@ -27,16 +31,9 @@ namespace UnityAtomsUtils.MonoBehaviourHelpers
 
 		public void Filter(GameObject otherGameObject)
 		{
-			if (!otherGameObject)
-			{
-				return;
-			}
-
 			bool tagsAreValid = CheckTagsAreValid(otherGameObject);
-			if (!tagsAreValid)
-			{
-				return;
-			}
+
+			if (!tagsAreValid) return;
 
 			passedFilterResponse?.Invoke(otherGameObject);
 		}
@@ -55,14 +52,23 @@ namespace UnityAtomsUtils.MonoBehaviourHelpers
 		{
 			bool tagsAreValid = false;
 
+			GameObject testGameObject = default;
+
+			if (_filterRoot)
+			{
+				testGameObject = otherGameObject.FindRoot();
+			}
+
+			if (!testGameObject) return false;
+
 			switch (logicalOperator)
 			{
 				case LogicalOperator.And:
-					tagsAreValid = otherGameObject.HasAllTags(tags);
+					tagsAreValid = testGameObject.HasAllTags(tags.Select(currentTag => currentTag.Value));
 					break;
 
 				case LogicalOperator.Or:
-					tagsAreValid = otherGameObject.HasAnyTag(tags);
+					tagsAreValid = testGameObject.HasAnyTag(tags);
 					break;
 			}
 

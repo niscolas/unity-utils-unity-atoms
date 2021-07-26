@@ -2,6 +2,7 @@
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 namespace UnityAtomsUtils.MonoBehaviourHelpers.MonoInputInterpreters
 {
@@ -33,11 +34,18 @@ namespace UnityAtomsUtils.MonoBehaviourHelpers.MonoInputInterpreters
 		[SerializeField]
 		private ER disabled;
 
-		[SerializeField]
-		private R valueRef;
+		[FormerlySerializedAs("valueRef"), SerializeField]
+		private R _value;
 
 		[SerializeField]
 		private BoolReference valueAsButton;
+
+		private bool _initialized;
+
+		private void OnEnable()
+		{
+			_initialized = true;
+		}
 
 		public void Interpret(InputAction.CallbackContext context)
 		{
@@ -94,9 +102,11 @@ namespace UnityAtomsUtils.MonoBehaviourHelpers.MonoInputInterpreters
 
 		public void UpdateValues(InputAction.CallbackContext context)
 		{
-			if (valueRef != null)
+			if (!_initialized) return;
+
+			if (_value != null)
 			{
-				valueRef.Value = context.ReadValue<T>();
+				_value.Value = context.ReadValue<T>();
 			}
 
 			if (!valueAsButton.IsUnassigned)

@@ -3,30 +3,31 @@ using Cysharp.Threading.Tasks;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace Plugins.UnityAtomsMonoBehaviourUtils {
 	public class Timer : MonoBehaviour {
 		[Header("References")]
 		[SerializeField]
-		private IntReference timeLeftRef;
+		private IntReference _timeLeft;
 
 		[Header("Events")]
-		[SerializeField]
-		private UnityEvent onTimerFinished;
+		[FormerlySerializedAs("onTimerFinished"), SerializeField]
+		private UnityEvent _finished;
 
 		public async void HandleTimerAsync() {
 			do {
 				try {
 					await UniTask.Delay(TimeSpan.FromSeconds(1)).WithCancellation(this.GetCancellationTokenOnDestroy());
-					timeLeftRef.Value--;
+					_timeLeft.Value--;
 				}
 				catch (Exception) {
 					break;
 				}
-			} while (timeLeftRef >= 0);
+			} while (_timeLeft >= 0);
 
-			if (timeLeftRef < 0) {
-				onTimerFinished?.Invoke();
+			if (_timeLeft < 0) {
+				_finished?.Invoke();
 			}
 		}
 	}
