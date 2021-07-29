@@ -1,4 +1,5 @@
-﻿using UnityAtoms;
+﻿using niscolas.UnityAtomsUtils;
+using UnityAtoms;
 using UnityAtoms.SceneMgmt;
 using UnityEngine;
 using UnityEngine.SceneManagement;

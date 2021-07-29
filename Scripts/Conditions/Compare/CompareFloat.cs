@@ -1,25 +1,24 @@
-﻿using MathUtils;
-using UnityAtoms;
+﻿using niscolas.UnityUtils;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
+using Constants = niscolas.UnityAtomsUtils.Constants;
 
-namespace UnityAtomsUtils.Conditions.Compare
+namespace niscolas.UnityAtomsUtils
 {
-	[EditorIcon("atom-icon-teal")]
-	[CreateAssetMenu(menuName = Constants.ConditionsCreateAssetMenuPath + "(float) => Compare?")]
-	public class CompareFloat : BaseCompare<FloatReference, FloatReference, float>
-	{
-		protected override bool Inner_Call(float operand2)
-		{
-			float operand1Value = _operand1.Value;
-			bool result = ComparisonUtility.Compare(operand1Value, _comparisonOperator, operand2);
+    [CreateAssetMenu(menuName = Constants.ConditionsCreateAssetMenuPath + "(float) => Compare?")]
+    public class CompareFloat : BaseCompare<FloatReference, FloatReference, float>
+    {
+        protected override bool Inner_Call(float operand2)
+        {
+            float operand1Value = _operand1.Value;
+            bool result = ComparisonUtility.Compare(operand1Value, _comparisonOperator, operand2);
 
-			return result;
-		}
+            return result;
+        }
 
-		protected override float GetConverted(FloatReference fixedOperand2)
-		{
-			return fixedOperand2.Value;
-		}
-	}
+        protected override float GetConverted(FloatReference fixedOperand2)
+        {
+            return fixedOperand2.Value;
+        }
+    }
 }

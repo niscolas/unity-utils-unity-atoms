@@ -1,4 +1,5 @@
-﻿using UnityAtoms;
+﻿using niscolas.UnityUtils;
+using UnityAtoms;
 using UnityEngine;
 
 namespace UnityAtomsUtils.Actions.MathOperation
@@ -11,7 +12,7 @@ namespace UnityAtomsUtils.Actions.MathOperation
 		protected TOp1 operand1;
 
 		[SerializeField]
-		protected MathUtils.MathOperation mathOperation;
+		protected ArithmeticalOperator mathOperation;
 
 		[SerializeField]
 		private TFixedOp2 fixedOperand2;

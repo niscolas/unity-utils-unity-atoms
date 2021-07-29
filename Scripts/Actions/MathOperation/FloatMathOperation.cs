@@ -1,11 +1,12 @@
 ﻿using System;
+using niscolas.UnityUtils;
 using UnityAtoms;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
+using Constants = niscolas.UnityAtomsUtils.Constants;
 
 namespace UnityAtomsUtils.Actions.MathOperation
 {
-	[EditorIcon("atom-icon-purple")]
 	[CreateAssetMenu(menuName = Constants.ActionsCreateAssetMenuPath + "(float) => Math Operation")]
 	public class FloatMathOperation : BaseMathOperation<FloatVariable, FloatReference, float>
 	{
@@ -13,19 +14,19 @@ namespace UnityAtomsUtils.Actions.MathOperation
 		{
 			switch (mathOperation)
 			{
-				case MathUtils.MathOperation.Sum:
+				case ArithmeticalOperator.Sum:
 					operand1.Add(operand2);
 					break;
 
-				case MathUtils.MathOperation.Subtract:
+				case ArithmeticalOperator.Subtract:
 					operand1.Subtract(operand2);
 					break;
 
-				case MathUtils.MathOperation.Divide:
+				case ArithmeticalOperator.Divide:
 					operand1.DivideBy(operand2);
 					break;
 
-				case MathUtils.MathOperation.Multiply:
+				case ArithmeticalOperator.Multiply:
 					operand1.MultiplyBy(operand2);
 					break;
 

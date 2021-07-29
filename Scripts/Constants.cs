@@ -1,4 +1,4 @@
-﻿namespace UnityAtomsUtils
+﻿namespace niscolas.UnityAtomsUtils
 {
 	public static class Constants
 	{

@@ -1,4 +1,5 @@
-﻿using UnityAtoms;
+﻿using niscolas.UnityAtomsUtils;
+using UnityAtoms;
 using UnityEngine;
 
 namespace UnityAtomsUtils.Functions.ChainFunctions

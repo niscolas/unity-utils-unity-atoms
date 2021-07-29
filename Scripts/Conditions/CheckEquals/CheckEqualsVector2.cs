@@ -1,4 +1,5 @@
-﻿using UnityAtoms.BaseAtoms;
+﻿using niscolas.UnityAtomsUtils;
+using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
 namespace UnityAtomsUtils.Conditions.CheckEquals
