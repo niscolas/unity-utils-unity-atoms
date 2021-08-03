@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using niscolas.UnityUtils;
+using niscolas.UnityUtils.Core;
 using Sirenix.OdinInspector;
 using UnityAtoms.BaseAtoms;
 using UnityAtoms.Tags;

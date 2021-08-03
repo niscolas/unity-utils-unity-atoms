@@ -6,6 +6,7 @@ using UnityAtoms;
 using UnityAtoms.Tags;
 using UnityEngine;
 using niscolas.UnityExtensions;
+using niscolas.UnityUtils.UnityAtoms;
 using UnityExtensions;
 
 namespace UnityAtomsUtils.Extensions

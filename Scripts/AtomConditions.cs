@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq;
-using niscolas.UnityUtils;
+using niscolas.UnityUtils.Core;
 using UnityAtoms;
 using UnityEngine;
 using UnityExtensions;
 
-namespace niscolas.UnityAtomsUtils
+namespace niscolas.UnityUtils.UnityAtoms
 {
     [Serializable]
     public struct AtomConditions<T>

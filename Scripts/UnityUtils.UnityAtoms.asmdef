@@ -1,0 +1,28 @@
+{
+    "name": "UnityUtils.UnityAtoms",
+    "rootNamespace": "",
+    "references": [
+        "GUID:29492541a59d04a81b47a7f225e8a22d",
+        "GUID:14165214884ae4a619bfb290f28194a7",
+        "GUID:c787b21d1c388634c97d82c717de67a3",
+        "GUID:39d90d64ded314c27a72b2586cd86439",
+        "GUID:7cead87e598844809ae298f71540fc18",
+        "GUID:e7e15a8eb685c44439fe73b95ef81946",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:82c7e6eac44d7e048b22ad98800dcfc7",
+        "GUID:174bc9f391f1b7f4292b3824c5019a21",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:a8d015c3e0000b8498299a9f0decdd0d",
+        "GUID:9104f28baed89644286c65222185ea59"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
