@@ -57,7 +57,7 @@ namespace UnityAtomsUtils.MonoBehaviourHelpers
 
 			if (_filterRoot)
 			{
-				testGameObject = otherGameObject.FindRoot();
+				testGameObject = otherGameObject.Root();
 			}
 
 			if (!testGameObject) return false;
