@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-	[EditorIcon("atom-icon-sand")]
 	public abstract class BaseChainFunction<T> : AtomFunction<T, T>
 	{
 		[SerializeField]
