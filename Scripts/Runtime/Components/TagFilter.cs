@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using niscolas.UnityUtils;
 using niscolas.UnityUtils.Core;
 using niscolas.UnityUtils.UnityAtoms;
 using Sirenix.OdinInspector;
@@ -24,7 +23,7 @@ namespace UnityAtomsUtils.MonoBehaviourHelpers
 		[SerializeField]
 		private LogicalOperator logicalOperator;
 
-		[Title("Response")]
+		[Title("Events")]
 		[SerializeField]
 		private UnityEvent<GameObject> passedFilterResponse;
 
