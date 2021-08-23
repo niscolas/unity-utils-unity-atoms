@@ -2,7 +2,6 @@
 using System.Linq;
 using niscolas.UnityExtensions;
 using niscolas.UnityUtils.Core;
-using Sirenix.Utilities;
 using UnityAtoms;
 using UnityAtoms.Tags;
 using UnityEngine;
