@@ -10,69 +10,74 @@ using UnityEngine.Events;
 
 namespace UnityAtomsUtils.MonoBehaviourHelpers
 {
-	public class TagFilter : MonoBehaviour
-	{
-		[SerializeField]
-		private bool _filterRoot;
+    public class TagFilter : MonoBehaviour
+    {
+        [SerializeField]
+        private bool _filterRoot;
 
-		[Required]
-		[SerializeField]
-		private List<StringConstant> tags;
+        [Required]
+        [SerializeField]
+        private List<StringConstant> tags;
 
-		[ShowIf(nameof(ShowLogicalOperator))]
-		[SerializeField]
-		private LogicalOperator logicalOperator;
+        [ShowIf(nameof(ShowLogicalOperator))]
+        [SerializeField]
+        private LogicalOperator logicalOperator;
 
-		[Title("Events")]
-		[SerializeField]
-		private UnityEvent<GameObject> passedFilterResponse;
+        [Title("Events")]
+        [SerializeField]
+        private UnityEvent<GameObject> passedFilterResponse;
 
-		private bool ShowLogicalOperator => tags.Count > 1;
+        private bool ShowLogicalOperator => tags.Count > 1;
 
-		public void Filter(GameObject otherGameObject)
-		{
-			bool tagsAreValid = CheckTagsAreValid(otherGameObject);
+        public void Filter(GameObject otherGameObject)
+        {
+            if (!otherGameObject || 
+                _filterRoot && !otherGameObject.TryFindRoot(out otherGameObject))
+            {
+                return;
+            }
 
-			if (!tagsAreValid) return;
+            bool tagsAreValid = CheckTagsAreValid(otherGameObject);
 
-			passedFilterResponse?.Invoke(otherGameObject);
-		}
+            if (!tagsAreValid)
+            {
+                return;
+            }
 
-		public void Filter(Collider otherCollider)
-		{
-			if (!otherCollider)
-			{
-				return;
-			}
+            passedFilterResponse?.Invoke(otherGameObject);
+        }
 
-			Filter(otherCollider.gameObject);
-		}
+        public void Filter(Collider otherCollider)
+        {
+            if (!otherCollider)
+            {
+                return;
+            }
 
-		private bool CheckTagsAreValid(GameObject otherGameObject)
-		{
-			bool tagsAreValid = false;
+            Filter(otherCollider.gameObject);
+        }
 
-			GameObject testGameObject = default;
+        private bool CheckTagsAreValid(GameObject otherGameObject)
+        {
+            if (tags.Count == 1)
+            {
+                return otherGameObject.HasTag(tags[0]);
+            }
+            
+            bool tagsAreValid = false;
 
-			if (_filterRoot)
-			{
-				testGameObject = otherGameObject.Root();
-			}
+            switch (logicalOperator)
+            {
+                case LogicalOperator.And:
+                    tagsAreValid = otherGameObject.HasAllTags(tags.Select(currentTag => currentTag.Value));
+                    break;
 
-			if (!testGameObject) return false;
+                case LogicalOperator.Or:
+                    tagsAreValid = otherGameObject.HasAnyTag(tags);
+                    break;
+            }
 
-			switch (logicalOperator)
-			{
-				case LogicalOperator.And:
-					tagsAreValid = testGameObject.HasAllTags(tags.Select(currentTag => currentTag.Value));
-					break;
-
-				case LogicalOperator.Or:
-					tagsAreValid = testGameObject.HasAnyTag(tags);
-					break;
-			}
-
-			return tagsAreValid;
-		}
-	}
+            return tagsAreValid;
+        }
+    }
 }
