@@ -8,157 +8,157 @@ using UnityEngine;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-	public static class GameObjectExtensions
-	{
-		public static bool HasAllTags(this GameObject gameObject, IEnumerable<string> tags)
-		{
-			return AtomTags
-				.GetTagsForGameObject(gameObject)
-				.HasAllTags(tags);
-		}
+    public static class GameObjectExtensions
+    {
+        public static bool HasAllTags(this GameObject gameObject, IEnumerable<string> tags)
+        {
+            return AtomTags
+                .GetTagsForGameObject(gameObject)
+                .HasAllTags(tags);
+        }
 
-		public static bool TryGetComponentFromRoot<T>(this GameObject gameObject, out T component) where T : class
-		{
-			component = gameObject.GetComponentFromRoot<T>();
-			return !component.IsUnityNull();
-		}
+        public static bool TryGetComponentFromRoot<T>(this GameObject gameObject, out T component) where T : class
+        {
+            component = gameObject.GetComponentFromRoot<T>();
+            return !component.IsUnityNull();
+        }
 
-		public static T GetComponentFromRoot<T>(this GameObject gameObject) where T : class
-		{
-			GameObject root = gameObject.Root();
+        public static T GetComponentFromRoot<T>(this GameObject gameObject) where T : class
+        {
+            GameObject root = gameObject.Root();
 
-			if (!root)
-			{
-				return default;
-			}
+            if (!root)
+            {
+                return default;
+            }
 
-			return root.GetComponentInChildren<T>();
-		}
+            return root.GetComponentInChildren<T>();
+        }
 
-		public static IEnumerable<T> GetComponentsWithTagFromRoot<T>(this GameObject gameObject, string tag)
-		{
-			GameObject root = gameObject.Root();
-			IEnumerable<T> components = GetComponentsInChildrenWithTag<T>(root, tag);
+        public static IEnumerable<T> GetComponentsWithTagFromRoot<T>(this GameObject gameObject, string tag)
+        {
+            GameObject root = gameObject.Root();
+            IEnumerable<T> components = GetComponentsInChildrenWithTag<T>(root, tag);
 
-			return components;
-		}
+            return components;
+        }
 
-		public static IEnumerable<T> GetComponentsWithTagsFromRoot<T>
-		(
-			this GameObject startGameObject, IEnumerable<string> tags, AtomConditionOperators tagOperator
-		)
-		{
-			IEnumerable<T> components =
-				FindChildrenWithTags(startGameObject.Root(), tags, tagOperator)
-					.GetComponents<T>();
+        public static IEnumerable<T> GetComponentsWithTagsFromRoot<T>
+        (
+            this GameObject startGameObject, IEnumerable<string> tags, AtomConditionOperators tagOperator
+        )
+        {
+            IEnumerable<T> components =
+                FindChildrenWithTags(startGameObject.Root(), tags, tagOperator)
+                    .GetComponents<T>();
 
-			return components;
-		}
+            return components;
+        }
 
-		public static T GetComponentInChildrenWithTag<T>(this GameObject searchRoot, string tag)
-		{
-			GameObject[] taggedChildren = searchRoot.FindChildrenWithTag(tag).ToArray();
+        public static T GetComponentInChildrenWithTag<T>(this GameObject searchRoot, string tag)
+        {
+            GameObject[] taggedChildren = searchRoot.FindChildrenWithTag(tag).ToArray();
 
-			if (taggedChildren.IsNullOrEmpty())
-			{
-				return default;
-			}
+            if (taggedChildren.IsNullOrEmpty())
+            {
+                return default;
+            }
 
-			foreach (GameObject taggedChild in taggedChildren)
-			{
-				T component = taggedChild.GetComponent<T>();
-				if (!component.IsUnityNull())
-				{
-					return component;
-				}
-			}
+            foreach (GameObject taggedChild in taggedChildren)
+            {
+                T component = taggedChild.GetComponent<T>();
+                if (!component.IsUnityNull())
+                {
+                    return component;
+                }
+            }
 
-			return default;
-		}
+            return default;
+        }
 
-		public static IEnumerable<T> GetComponentsInChildrenWithTag<T>(this GameObject searchRoot, string tag)
-		{
-			IEnumerable<GameObject> taggedChildren = searchRoot.FindChildrenWithTag(tag).AsArray();
+        public static IEnumerable<T> GetComponentsInChildrenWithTag<T>(this GameObject searchRoot, string tag)
+        {
+            IEnumerable<GameObject> taggedChildren = searchRoot.FindChildrenWithTag(tag).ToArray();
 
-			if (taggedChildren.IsNullOrEmpty())
-			{
-				return default;
-			}
+            if (taggedChildren.IsNullOrEmpty())
+            {
+                return default;
+            }
 
-			return taggedChildren.GetComponents<T>();
-		}
+            return taggedChildren.GetComponents<T>();
+        }
 
-		public static bool RootHasTag(this GameObject gameObject, string tag)
-		{
-			if (!gameObject.TryFindRoot(out GameObject root))
-			{
-				return false;
-			}
+        public static bool RootHasTag(this GameObject gameObject, string tag)
+        {
+            if (!gameObject.TryFindRoot(out GameObject root))
+            {
+                return false;
+            }
 
-			return root.HasTag(tag);
-		}
+            return root.HasTag(tag);
+        }
 
-		public static IEnumerable<GameObject> FindWithTagFromRoot(this GameObject startGameObject, string tag)
-		{
-			GameObject rootGameObject = startGameObject.Root();
+        public static IEnumerable<GameObject> FindWithTagFromRoot(this GameObject startGameObject, string tag)
+        {
+            GameObject rootGameObject = startGameObject.Root();
 
-			if (!rootGameObject) return default;
+            if (!rootGameObject) return default;
 
-			IEnumerable<GameObject> taggedGameObjects = rootGameObject.FindChildrenWithTag(tag);
+            IEnumerable<GameObject> taggedGameObjects = rootGameObject.FindChildrenWithTag(tag);
 
-			return taggedGameObjects;
-		}
+            return taggedGameObjects;
+        }
 
-		public static IEnumerable<GameObject> FindWithTagInHierarchy
-		(
-			this GameObject startGameObject, string tag, bool searchInParents = true, bool searchInChildren = true
-		)
-		{
-			if (!startGameObject) return default;
+        public static IEnumerable<GameObject> FindWithTagInHierarchy
+        (
+            this GameObject startGameObject, string tag, bool searchInParents = true, bool searchInChildren = true
+        )
+        {
+            if (!startGameObject) return default;
 
-			HashSet<GameObject> foundGameObjects = new HashSet<GameObject>();
-			if (startGameObject.HasTag(tag))
-			{
-				foundGameObjects.Add(startGameObject);
-			}
+            HashSet<GameObject> foundGameObjects = new HashSet<GameObject>();
+            if (startGameObject.HasTag(tag))
+            {
+                foundGameObjects.Add(startGameObject);
+            }
 
-			if (searchInParents)
-			{
-				foundGameObjects.AddRange(startGameObject.FindParentsWithTag(tag));
-			}
+            if (searchInParents)
+            {
+                foundGameObjects.AddRange(startGameObject.FindParentsWithTag(tag));
+            }
 
-			if (searchInChildren)
-			{
-				foundGameObjects.AddRange(startGameObject.FindChildrenWithTag(tag));
-			}
+            if (searchInChildren)
+            {
+                foundGameObjects.AddRange(startGameObject.FindChildrenWithTag(tag));
+            }
 
-			return foundGameObjects;
-		}
+            return foundGameObjects;
+        }
 
-		public static IEnumerable<GameObject> FindParentsWithTag(this GameObject gameObject, string tag)
-		{
-			IEnumerable<AtomTags> atomTagsSet = gameObject.GetComponentsInParent<AtomTags>();
+        public static IEnumerable<GameObject> FindParentsWithTag(this GameObject gameObject, string tag)
+        {
+            IEnumerable<AtomTags> atomTagsSet = gameObject.GetComponentsInParent<AtomTags>();
 
-			return atomTagsSet.FilterWithTag(tag);
-		}
+            return atomTagsSet.FilterWithTag(tag);
+        }
 
-		public static IEnumerable<GameObject> FindChildrenWithTag(this GameObject gameObject, string tag)
-		{
-			IEnumerable<AtomTags> atomTagsSet = gameObject.GetComponentsInChildren<AtomTags>();
+        public static IEnumerable<GameObject> FindChildrenWithTag(this GameObject gameObject, string tag)
+        {
+            IEnumerable<AtomTags> atomTagsSet = gameObject.GetComponentsInChildren<AtomTags>();
 
-			return atomTagsSet.FilterWithTag(tag);
-		}
+            return atomTagsSet.FilterWithTag(tag);
+        }
 
-		public static IEnumerable<GameObject> FindChildrenWithTags
-		(
-			this GameObject gameObject, IEnumerable<string> tags, AtomConditionOperators tagOperator
-		)
-		{
-			IEnumerable<AtomTags> atomTagsSet = gameObject.GetComponentsInChildren<AtomTags>();
+        public static IEnumerable<GameObject> FindChildrenWithTags
+        (
+            this GameObject gameObject, IEnumerable<string> tags, AtomConditionOperators tagOperator
+        )
+        {
+            IEnumerable<AtomTags> atomTagsSet = gameObject.GetComponentsInChildren<AtomTags>();
 
-			return atomTagsSet
-				.FilterWithTags(tags, tagOperator)
-				.GameObjects();
-		}
-	}
+            return atomTagsSet
+                .FilterWithTags(tags, tagOperator)
+                .GameObjects();
+        }
+    }
 }
