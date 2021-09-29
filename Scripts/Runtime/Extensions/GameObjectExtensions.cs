@@ -23,18 +23,6 @@ namespace niscolas.UnityUtils.UnityAtoms
             return !component.IsUnityNull();
         }
 
-        public static T GetComponentFromRoot<T>(this GameObject gameObject) where T : class
-        {
-            GameObject root = gameObject.Root();
-
-            if (!root)
-            {
-                return default;
-            }
-
-            return root.GetComponentInChildren<T>();
-        }
-
         public static IEnumerable<T> GetComponentsWithTagFromRoot<T>(this GameObject gameObject, string tag)
         {
             GameObject root = gameObject.Root();
