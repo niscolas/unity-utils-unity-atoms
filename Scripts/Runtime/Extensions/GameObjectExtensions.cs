@@ -17,12 +17,6 @@ namespace niscolas.UnityUtils.UnityAtoms
                 .HasAllTags(tags);
         }
 
-        public static bool TryGetComponentFromRoot<T>(this GameObject gameObject, out T component) where T : class
-        {
-            component = gameObject.GetComponentFromRoot<T>();
-            return !component.IsUnityNull();
-        }
-
         public static IEnumerable<T> GetComponentsWithTagFromRoot<T>(this GameObject gameObject, string tag)
         {
             GameObject root = gameObject.Root();
