@@ -7,7 +7,7 @@ namespace niscolas.UnityUtils.UnityAtoms
 {
 	[EditorIcon("atom-icon-teal")]
 	[CreateAssetMenu(menuName =
-		Constants.ConditionsCreateAssetMenuPath + "(GameObject) => Equals?")]
+		UnityAtomsConstants.ConditionsCreateAssetMenuPrefix + "(GameObject) => Equals?")]
 	public class CheckEqualsGameObject : BaseCheckEquals<GameObjectReference, GameObjectReference, GameObject>
 	{
 		protected override bool Inner_Call(GameObject operand2)

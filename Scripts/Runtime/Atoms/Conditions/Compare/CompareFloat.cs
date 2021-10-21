@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    [CreateAssetMenu(menuName = Constants.ConditionsCreateAssetMenuPath + "(float) => Compare?")]
+    [CreateAssetMenu(menuName = UnityAtomsConstants.ConditionsCreateAssetMenuPrefix + "(float) => Compare?")]
     public class CompareFloat : BaseCompare<FloatReference, FloatReference, float>
     {
         protected override bool Inner_Call(float operand2)

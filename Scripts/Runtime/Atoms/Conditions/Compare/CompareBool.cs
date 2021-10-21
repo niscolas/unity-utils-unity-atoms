@@ -6,7 +6,7 @@ using UnityEngine;
 namespace niscolas.UnityUtils.UnityAtoms
 {
 	[EditorIcon("atom-icon-teal")]
-	[CreateAssetMenu(menuName = Constants.ConditionsCreateAssetMenuPath + "(bool) => Compare?")]
+	[CreateAssetMenu(menuName = UnityAtomsConstants.ConditionsCreateAssetMenuPrefix + "(bool) => Compare?")]
 	public class CompareBool : BaseCompare<BoolReference, BoolReference, bool>
 	{
 		protected override bool Inner_Call(bool operand2)

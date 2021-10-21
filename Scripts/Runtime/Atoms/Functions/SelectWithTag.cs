@@ -9,7 +9,7 @@ namespace niscolas.UnityUtils.UnityAtoms
 {
 	[EditorIcon("atom-icon-sand")]
 	[CreateAssetMenu(
-		menuName = Constants.FunctionsCreateAssetMenuPath + "(GameObject) => Select With Tag : GameObject")]
+		menuName = UnityAtomsConstants.FunctionsCreateAssetMenuPrefix + "(GameObject) => Select With Tag : GameObject")]
 	public class SelectWithTag : GameObjectGameObjectFunction
 	{
 		[SerializeField]

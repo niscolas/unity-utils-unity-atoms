@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-	[CreateAssetMenu(menuName = Constants.ConditionsCreateAssetMenuPath + "(Vector2) => Equals?")]
+	[CreateAssetMenu(menuName = UnityAtomsConstants.ConditionsCreateAssetMenuPrefix + "(Vector2) => Equals?")]
 	public class CheckEqualsVector2 : BaseCheckEquals<Vector2Reference, Vector2Reference, Vector2>
 	{
 		protected override bool Inner_Call(Vector2 operand2)

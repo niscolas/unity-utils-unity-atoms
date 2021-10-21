@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 namespace niscolas.UnityUtils.UnityAtoms
 {
 	[CreateAssetMenu(
-		menuName = Constants.SceneManagementCreateAssetMenuPath + "() => Reload Current Scene")]
+		menuName = UnityAtomsConstants.SceneManagementCreateAssetMenuPrefix + "() => Reload Current Scene")]
 	public class ReloadCurrentScene : AtomAction
 	{
 		public override void Do()

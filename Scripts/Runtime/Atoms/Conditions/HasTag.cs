@@ -9,7 +9,7 @@ using UnityEngine.Serialization;
 namespace UnityAtomsUtils.Conditions
 {
 	[CreateAssetMenu(
-		menuName = Constants.ConditionsCreateAssetMenuPath + "(GameObject) => Has Tag?")]
+		menuName = UnityAtomsConstants.ConditionsCreateAssetMenuPrefix + "(GameObject) => Has Tag?")]
 	public class HasTag : AtomCondition<GameObject>
 	{
 		[FormerlySerializedAs("mustHaveTag")]

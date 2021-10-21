@@ -8,10 +8,10 @@ using UnityEngine;
 namespace niscolas.UnityUtils.UnityAtoms
 {
     [Serializable]
-    public struct AtomConditions<T>
+    public class AtomConditions<T>
     {
         [SerializeField]
-        private AtomCondition<T>[] _conditions;
+        protected AtomCondition<T>[] _conditions;
 
         [SerializeField]
         private LogicalOperator _operator;
@@ -23,7 +23,10 @@ namespace niscolas.UnityUtils.UnityAtoms
 
         public bool CallAll(T entry)
         {
-            if (_conditions.IsNullOrEmpty()) return false;
+            if (_conditions.IsNullOrEmpty())
+            {
+                return false;
+            }
 
             bool result = false;
             switch (_operator)

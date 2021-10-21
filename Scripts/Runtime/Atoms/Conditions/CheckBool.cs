@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-	[CreateAssetMenu(menuName = Constants.ConditionsCreateAssetMenuPath + "(bool) => Is True?")]
+	[CreateAssetMenu(menuName = UnityAtomsConstants.ConditionsCreateAssetMenuPrefix + "(bool) => Is True?")]
 	public class CheckBool : BoolCondition
 	{
 		[SerializeField]

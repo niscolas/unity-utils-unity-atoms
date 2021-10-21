@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 namespace niscolas.UnityUtils.UnityAtoms
 {
 	[CreateAssetMenu(
-		menuName = Constants.SceneManagementCreateAssetMenuPath + "Improved Change Scene")]
+		menuName = UnityAtomsConstants.SceneManagementCreateAssetMenuPrefix + "Improved Change Scene")]
 	public class ImprovedLoadScene : AtomAction
 	{
 		[FormerlySerializedAs("sceneFieldReference"), SerializeField]
