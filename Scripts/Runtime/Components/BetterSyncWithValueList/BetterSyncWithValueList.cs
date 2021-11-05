@@ -14,10 +14,10 @@ namespace niscolas.UnityUtils.UnityAtoms
         private L _valueList;
 
         [SerializeField]
-        private LifecycleMoment _addMoment = LifecycleMoment.OnEnable;
+        private MonoCallbackType _addMoment = MonoCallbackType.OnEnable;
 
         [SerializeField]
-        private LifecycleMoment _removeMoment = LifecycleMoment.OnDisable;
+        private MonoCallbackType _removeMoment = MonoCallbackType.OnDisable;
 
         private T _syncSubject;
 
