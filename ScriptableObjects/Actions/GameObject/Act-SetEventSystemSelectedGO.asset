@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8a484e65208467883cb1be97f8bbd02, type: 3}
-  m_Name: ToggleActive
+  m_Script: {fileID: 11500000, guid: 524feba4b1e44e4e9956f008273a4e23, type: 3}
+  m_Name: Act-SetEventSystemSelectedGO
   m_EditorClassIdentifier: 
   _developerDescription: 

@@ -1,32 +1,32 @@
-﻿using UnityAtoms;
+﻿using niscolas.UnityUtils.Core;
+using UnityAtoms;
 using UnityEngine;
+using UnityEngine.Events;
 
-namespace Plugins.UnityAtomsUtils.Scripts.MonoBehaviourHelpers.FilteredActions
+namespace niscolas.UnityUtils.UnityAtoms
 {
-	public class FilteredAction : MonoBehaviour
-	{
-		[SerializeField]
-		private AtomAction<GameObject> _action;
+    public class FilteredAction : CachedMonoBehaviour
+    {
+        [SerializeField]
+        private AtomFunction<GameObject, GameObject> _selectGameObjectFunction;
 
-		[SerializeField]
-		private AtomFunction<GameObject, GameObject> _selectGameObjectFunction;
+        [Header("Events")]
+        [SerializeField]
+        private UnityEvent<GameObject> _onFiltered;
 
-		public void Do(GameObject target)
-		{
-			if (_selectGameObjectFunction)
-			{
-				target = _selectGameObjectFunction.Call(target);
-			}
+        public void Do()
+        {
+            Do(_gameObject);
+        }
 
-			if (_action)
-			{
-				_action.Do(target);
-			}
-		}
+        public void Do(GameObject target)
+        {
+            if (_selectGameObjectFunction)
+            {
+                target = _selectGameObjectFunction.Call(target);
+            }
 
-		public void Do()
-		{
-			Do(gameObject);
-		}
-	}
+            _onFiltered?.Invoke(target);
+        }
+    }
 }
