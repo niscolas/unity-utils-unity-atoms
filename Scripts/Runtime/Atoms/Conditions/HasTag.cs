@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using niscolas.UnityAtomsUtils;
 using niscolas.UnityUtils.UnityAtoms;
 using UnityAtoms;
 using UnityAtoms.BaseAtoms;

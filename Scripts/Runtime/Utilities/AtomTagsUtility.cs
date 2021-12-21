@@ -2,7 +2,7 @@
 using UnityAtoms.Tags;
 using UnityEngine;
 
-namespace UnityAtomsUtils.Utilities
+namespace niscolas.UnityUtils.UnityAtoms
 {
 	public static class AtomTagsUtility
 	{

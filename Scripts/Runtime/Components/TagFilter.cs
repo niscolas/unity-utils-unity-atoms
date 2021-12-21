@@ -1,14 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using niscolas.UnityUtils.Core;
-using niscolas.UnityUtils.UnityAtoms;
 using Sirenix.OdinInspector;
 using UnityAtoms.BaseAtoms;
 using UnityAtoms.Tags;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace UnityAtomsUtils.MonoBehaviourHelpers
+namespace niscolas.UnityUtils.UnityAtoms
 {
     public class TagFilter : MonoBehaviour
     {

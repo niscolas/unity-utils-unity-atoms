@@ -1,11 +1,9 @@
 ﻿using System;
 using niscolas.UnityExtensions;
-using niscolas.UnityUtils.UnityAtoms;
 using UnityAtoms.BaseAtoms;
-using UnityAtomsUtils.Utilities;
 using UnityEngine;
 
-namespace Plugins.UnityAtomsUtils.Scripts.MonoBehaviourHelpers
+namespace niscolas.UnityUtils.UnityAtoms
 {
 	[Serializable]
 	public struct ReferenceOrTag<T>

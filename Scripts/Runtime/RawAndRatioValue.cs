@@ -2,7 +2,7 @@
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
-namespace UnityUtils
+namespace niscolas.UnityUtils.UnityAtoms
 {
 	[Serializable]
 	public struct RawAndRatioValue

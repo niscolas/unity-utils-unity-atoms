@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Linq;
-using niscolas.UnityUtils.UnityAtoms;
 using UnityAtoms;
 using UnityEngine;
 
-namespace niscolas.UnityAtomsUtils
+namespace niscolas.UnityUtils.UnityAtoms
 {
     [Serializable]
     public class FloatComparisons
