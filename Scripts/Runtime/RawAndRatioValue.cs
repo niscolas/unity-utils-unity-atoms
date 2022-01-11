@@ -4,25 +4,25 @@ using UnityEngine;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-	[Serializable]
-	public struct RawAndRatioValue
-	{
-		[SerializeField]
-		private FloatReference _rawValue;
+    [Serializable]
+    public struct RawAndRatioValue
+    {
+        [SerializeField]
+        private FloatReference _rawValue;
 
-		[SerializeField]
-		private FloatReference _ratio;
+        [SerializeField]
+        private FloatReference _ratio;
 
-		public float RawValue
-		{
-			get => _rawValue;
-			set => _rawValue.Value = value;
-		}
+        public float RawValue
+        {
+            get => _rawValue;
+            set => _rawValue.Value = value;
+        }
 
-		public float Ratio
-		{
-			get => _ratio;
-			set => _ratio.Value = value;
-		}
-	}
+        public float Ratio
+        {
+            get => _ratio;
+            set => _ratio.Value = value;
+        }
+    }
 }

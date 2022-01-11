@@ -16,7 +16,7 @@ namespace niscolas.UnityUtils.UnityAtoms
         private ER _eventReference;
 
         [SerializeField]
-        private IntReference _size = new IntReference();
+        private IntReference _size = new();
 
         private void Start()
         {

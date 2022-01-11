@@ -1,6 +1,5 @@
-﻿using System;
+﻿using niscolas.UnityUtils.Core;
 using niscolas.UnityUtils.Core.Extensions;
-using niscolas.UnityUtils.Core;
 using UnityAtoms;
 using UnityEngine;
 using UnityEngine.Events;

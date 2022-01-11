@@ -5,37 +5,37 @@ using UnityEngine;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-	[Serializable]
-	public struct ReferenceOrTag<T>
-	{
-		[SerializeField]
-		private T _value;
+    [Serializable]
+    public struct ReferenceOrTag<T>
+    {
+        [SerializeField]
+        private T _value;
 
-		[SerializeField]
-		private StringConstant _fallbackTag;
+        [SerializeField]
+        private StringConstant _fallbackTag;
 
-		public GameObject SearchRoot { get; set; }
+        public GameObject SearchRoot { get; set; }
 
-		public T Value
-		{
-			get
-			{
-				if (_value.IsUnityNull())
-				{
-					if (!SearchRoot)
-					{
-						_value = AtomTagsUtility.FindComponentByTag<T>(_fallbackTag);
-					}
-					else
-					{
-						_value = SearchRoot.GetComponentInChildrenWithTag<T>(_fallbackTag.Value);
-					}
-				}
+        public T Value
+        {
+            get
+            {
+                if (_value.IsUnityNull())
+                {
+                    if (!SearchRoot)
+                    {
+                        _value = AtomTagsUtility.FindComponentByTag<T>(_fallbackTag);
+                    }
+                    else
+                    {
+                        _value = SearchRoot.GetComponentInChildrenWithTag<T>(_fallbackTag.Value);
+                    }
+                }
 
-				return _value;
-			}
+                return _value;
+            }
 
-			set => _value = value;
-		}
-	}
+            set => _value = value;
+        }
+    }
 }

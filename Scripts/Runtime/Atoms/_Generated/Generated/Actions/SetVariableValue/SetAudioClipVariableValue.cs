@@ -1,15 +1,17 @@
-using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
 namespace UnityAtoms.BaseAtoms
 {
     /// <summary>
-    /// Set variable value Action of type `UnityEngine.AudioClip`. Inherits from `SetVariableValue&lt;UnityEngine.AudioClip, AudioClipPair, AudioClipVariable, AudioClipConstant, AudioClipReference, AudioClipEvent, AudioClipPairEvent, AudioClipVariableInstancer&gt;`.
+    ///     Set variable value Action of type `UnityEngine.AudioClip`. Inherits from `SetVariableValue&lt;
+    ///     UnityEngine.AudioClip, AudioClipPair, AudioClipVariable, AudioClipConstant, AudioClipReference, AudioClipEvent,
+    ///     AudioClipPairEvent, AudioClipVariableInstancer&gt;`.
     /// </summary>
     [EditorIcon("atom-icon-purple")]
-    [CreateAssetMenu(menuName = "Unity Atoms/Actions/Set Variable Value/AudioClip", fileName = "SetAudioClipVariableValue")]
+    [CreateAssetMenu(menuName = "Unity Atoms/Actions/Set Variable Value/AudioClip",
+        fileName = "SetAudioClipVariableValue")]
     public sealed class SetAudioClipVariableValue : SetVariableValue<
-        UnityEngine.AudioClip,
+        AudioClip,
         AudioClipPair,
         AudioClipVariable,
         AudioClipConstant,
@@ -17,6 +19,5 @@ namespace UnityAtoms.BaseAtoms
         AudioClipEvent,
         AudioClipPairEvent,
         AudioClipAudioClipFunction,
-        AudioClipVariableInstancer>
-    { }
+        AudioClipVariableInstancer> { }
 }

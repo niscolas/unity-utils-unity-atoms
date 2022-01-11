@@ -30,7 +30,7 @@ namespace niscolas.UnityUtils.UnityAtoms
 
         public void Filter(GameObject otherGameObject)
         {
-            if (!otherGameObject || 
+            if (!otherGameObject ||
                 _filterRoot && !otherGameObject.TryFindRoot(out otherGameObject))
             {
                 return;
@@ -62,7 +62,7 @@ namespace niscolas.UnityUtils.UnityAtoms
             {
                 return otherGameObject.HasTag(tags[0]);
             }
-            
+
             bool tagsAreValid = false;
 
             switch (logicalOperator)

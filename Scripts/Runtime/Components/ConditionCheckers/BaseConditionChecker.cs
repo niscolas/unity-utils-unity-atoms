@@ -23,10 +23,12 @@ namespace niscolas.UnityUtils.UnityAtoms
         private TR _fixedInput;
 
         [Title("Events")]
-        [FormerlySerializedAs("_ifTrue"), SerializeField]
+        [FormerlySerializedAs("_ifTrue")]
+        [SerializeField]
         private UnityEvent<T> _onConditionMet;
 
-        [FormerlySerializedAs("_ifFalse"), SerializeField]
+        [FormerlySerializedAs("_ifFalse")]
+        [SerializeField]
         private UnityEvent<T> _onConditionFailed;
 
         public void Check(T input)

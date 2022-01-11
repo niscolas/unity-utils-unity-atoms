@@ -12,7 +12,7 @@ namespace niscolas.UnityUtils.UnityAtoms
         [Header("Events")]
         [SerializeField]
         private UnityEvent _onConditionMet;
-        
+
         [SerializeField]
         private UnityEvent _onConditionFailed;
 

@@ -12,11 +12,6 @@ namespace niscolas.UnityUtils.UnityAtoms
         [SerializeField]
         private List<AtomAction> _content;
 
-        public void Do()
-        {
-            _content.ForEach(a => a.Do());
-        }
-
         public IEnumerator<AtomAction> GetEnumerator()
         {
             return _content.GetEnumerator();
@@ -26,6 +21,11 @@ namespace niscolas.UnityUtils.UnityAtoms
         {
             return GetEnumerator();
         }
+
+        public void Do()
+        {
+            _content.ForEach(a => a.Do());
+        }
     }
 
     [Serializable]
@@ -33,16 +33,6 @@ namespace niscolas.UnityUtils.UnityAtoms
     {
         [SerializeField]
         private List<AtomAction<T>> _content;
-
-        public void Do(T value)
-        {
-            _content.ForEach(a => a.Do(value));
-        }
-
-        public void Do()
-        {
-            _content.ForEach(a => a.Do());
-        }
 
         public IEnumerator<AtomAction<T>> GetEnumerator()
         {
@@ -52,6 +42,16 @@ namespace niscolas.UnityUtils.UnityAtoms
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
+        }
+
+        public void Do(T value)
+        {
+            _content.ForEach(a => a.Do(value));
+        }
+
+        public void Do()
+        {
+            _content.ForEach(a => a.Do());
         }
     }
 }

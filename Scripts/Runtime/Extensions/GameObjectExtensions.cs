@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using niscolas.UnityUtils.Core.Extensions;
 using niscolas.UnityUtils.Core;
 using niscolas.UnityUtils.Core.Extensions;
 using UnityAtoms;
@@ -85,7 +84,10 @@ namespace niscolas.UnityUtils.UnityAtoms
         {
             GameObject rootGameObject = startGameObject.Root();
 
-            if (!rootGameObject) return default;
+            if (!rootGameObject)
+            {
+                return default;
+            }
 
             IEnumerable<GameObject> taggedGameObjects = rootGameObject.FindChildrenWithTag(tag);
 
@@ -97,9 +99,12 @@ namespace niscolas.UnityUtils.UnityAtoms
             this GameObject startGameObject, string tag, bool searchInParents = true, bool searchInChildren = true
         )
         {
-            if (!startGameObject) return default;
+            if (!startGameObject)
+            {
+                return default;
+            }
 
-            HashSet<GameObject> foundGameObjects = new HashSet<GameObject>();
+            HashSet<GameObject> foundGameObjects = new();
             if (startGameObject.HasTag(tag))
             {
                 foundGameObjects.Add(startGameObject);

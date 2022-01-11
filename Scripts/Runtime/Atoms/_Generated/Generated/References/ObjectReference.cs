@@ -1,15 +1,16 @@
 using System;
-using UnityAtoms.BaseAtoms;
-using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace UnityAtoms.BaseAtoms
 {
     /// <summary>
-    /// Reference of type `UnityEngine.Object`. Inherits from `AtomReference&lt;UnityEngine.Object, ObjectPair, ObjectConstant, ObjectVariable, ObjectEvent, ObjectPairEvent, ObjectObjectFunction, ObjectVariableInstancer, AtomCollection, AtomList&gt;`.
+    ///     Reference of type `UnityEngine.Object`. Inherits from `AtomReference&lt;UnityEngine.Object, ObjectPair,
+    ///     ObjectConstant, ObjectVariable, ObjectEvent, ObjectPairEvent, ObjectObjectFunction, ObjectVariableInstancer,
+    ///     AtomCollection, AtomList&gt;`.
     /// </summary>
     [Serializable]
     public sealed class ObjectReference : AtomReference<
-        UnityEngine.Object,
+        Object,
         ObjectPair,
         ObjectConstant,
         ObjectVariable,
@@ -18,10 +19,15 @@ namespace UnityAtoms.BaseAtoms
         ObjectObjectFunction,
         ObjectVariableInstancer>, IEquatable<ObjectReference>
     {
-        public ObjectReference() : base() { }
-        public ObjectReference(UnityEngine.Object value) : base(value) { }
-        public bool Equals(ObjectReference other) { return base.Equals(other); }
-        protected override bool ValueEquals(UnityEngine.Object other)
+        public ObjectReference() { }
+        public ObjectReference(Object value) : base(value) { }
+
+        public bool Equals(ObjectReference other)
+        {
+            return base.Equals(other);
+        }
+
+        protected override bool ValueEquals(Object other)
         {
             throw new NotImplementedException();
         }

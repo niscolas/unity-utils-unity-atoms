@@ -8,5 +8,5 @@ namespace niscolas.UnityUtils.UnityAtoms
         BoolEvent,
         BoolVariableInstancer,
         BoolEventInstancer,
-    BoolEventReference> { }
+        BoolEventReference> { }
 }

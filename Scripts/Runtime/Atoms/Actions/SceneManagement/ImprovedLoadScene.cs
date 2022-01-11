@@ -10,10 +10,12 @@ namespace niscolas.UnityUtils.UnityAtoms
         menuName = UnityAtomsConstants.SceneManagementCreateAssetMenuPrefix + "Improved Change Scene")]
     public class ImprovedLoadScene : AtomAction
     {
-        [FormerlySerializedAs("sceneFieldReference"), SerializeField]
+        [FormerlySerializedAs("sceneFieldReference")]
+        [SerializeField]
         private SceneFieldReference _scene;
 
-        [FormerlySerializedAs("loadSceneMode"), SerializeField]
+        [FormerlySerializedAs("loadSceneMode")]
+        [SerializeField]
         private LoadSceneMode _loadSceneMode;
 
         public override void Do()

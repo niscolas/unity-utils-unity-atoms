@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    public class BetterSyncWithGameObjectValueList : 
+    public class BetterSyncWithGameObjectValueList :
         BetterSyncWithValueList<GameObject, GameObjectEvent, GameObjectValueList>
     {
         protected override GameObject GetSyncSubject()

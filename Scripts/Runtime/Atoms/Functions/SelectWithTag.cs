@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using Sirenix.OdinInspector;
-using UnityAtoms;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
@@ -26,7 +25,10 @@ namespace niscolas.UnityUtils.UnityAtoms
 
         public override GameObject Call(GameObject entry)
         {
-            if (!entry || !tag) return default;
+            if (!entry || !tag)
+            {
+                return default;
+            }
 
             GameObject result;
 

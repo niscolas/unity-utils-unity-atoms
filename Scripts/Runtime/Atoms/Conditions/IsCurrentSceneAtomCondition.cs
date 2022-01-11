@@ -10,7 +10,7 @@ namespace niscolas.UnityUtils.UnityAtoms
     {
         [SerializeField]
         private SceneFieldReference _testScene;
-        
+
         public override bool Call()
         {
             return _testScene.Value.ScenePath == SceneManager.GetActiveScene().path;

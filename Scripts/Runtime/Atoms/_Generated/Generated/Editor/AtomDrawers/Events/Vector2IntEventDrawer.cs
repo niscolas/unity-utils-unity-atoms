@@ -1,11 +1,12 @@
 #if UNITY_2019_1_OR_NEWER
-using UnityEditor;
 using UnityAtoms.Editor;
+using UnityEditor;
 
 namespace UnityAtoms.BaseAtoms.Editor
 {
     /// <summary>
-    /// Event property drawer of type `UnityEngine.Vector2Int`. Inherits from `AtomDrawer&lt;Vector2IntEvent&gt;`. Only availble in `UNITY_2019_1_OR_NEWER`.
+    ///     Event property drawer of type `UnityEngine.Vector2Int`. Inherits from `AtomDrawer&lt;Vector2IntEvent&gt;`. Only
+    ///     availble in `UNITY_2019_1_OR_NEWER`.
     /// </summary>
     [CustomPropertyDrawer(typeof(Vector2IntEvent))]
     public class Vector2IntEventDrawer : AtomDrawer<Vector2IntEvent> { }

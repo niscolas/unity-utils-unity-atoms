@@ -6,53 +6,53 @@ using UnityEngine;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-	public static class AtomTagsExtensions
-	{
-		public static IEnumerable<GameObject> GameObjects(this IEnumerable<AtomTags> atomTagsSet)
-		{
-			return atomTagsSet.Select(atomTags => atomTags.gameObject);
-		}
-		
-		public static bool HasAnyTag(this AtomTags atomTags, IEnumerable<string> tags)
-		{
-			return tags.Any(atomTags.HasTag);
-		}
+    public static class AtomTagsExtensions
+    {
+        public static IEnumerable<GameObject> GameObjects(this IEnumerable<AtomTags> atomTagsSet)
+        {
+            return atomTagsSet.Select(atomTags => atomTags.gameObject);
+        }
 
-		public static bool HasAllTags(this AtomTags atomTags, IEnumerable<string> tags)
-		{
-			return tags.All(atomTags.HasTag);
-		}
-		
-		public static IEnumerable<AtomTags> FilterWithTags
-		(
-			this IEnumerable<AtomTags> atomTagsSet, IEnumerable<string> tags, AtomConditionOperators tagOperator
-		)
-		{
-			IEnumerable<AtomTags> taggedAtomTags = atomTagsSet
-				.Where(atomTags =>
-				{
-					switch (tagOperator)
-					{
-						case AtomConditionOperators.And:
-							return atomTags.HasAllTags(tags);
+        public static bool HasAnyTag(this AtomTags atomTags, IEnumerable<string> tags)
+        {
+            return tags.Any(atomTags.HasTag);
+        }
 
-						case AtomConditionOperators.Or:
-							return atomTags.HasAnyTag(tags);
-					}
+        public static bool HasAllTags(this AtomTags atomTags, IEnumerable<string> tags)
+        {
+            return tags.All(atomTags.HasTag);
+        }
 
-					return false;
-				});
+        public static IEnumerable<AtomTags> FilterWithTags
+        (
+            this IEnumerable<AtomTags> atomTagsSet, IEnumerable<string> tags, AtomConditionOperators tagOperator
+        )
+        {
+            IEnumerable<AtomTags> taggedAtomTags = atomTagsSet
+                .Where(atomTags =>
+                {
+                    switch (tagOperator)
+                    {
+                        case AtomConditionOperators.And:
+                            return atomTags.HasAllTags(tags);
 
-			return taggedAtomTags;
-		}
-		
-		public static IEnumerable<GameObject> FilterWithTag(this IEnumerable<AtomTags> atomTagsSet, string tag)
-		{
-			IEnumerable<GameObject> taggedGameObjects = atomTagsSet
-				.Where(atomTags => atomTags.HasTag(tag))
-				.GameObjects();
+                        case AtomConditionOperators.Or:
+                            return atomTags.HasAnyTag(tags);
+                    }
 
-			return taggedGameObjects;
-		}
-	}
+                    return false;
+                });
+
+            return taggedAtomTags;
+        }
+
+        public static IEnumerable<GameObject> FilterWithTag(this IEnumerable<AtomTags> atomTagsSet, string tag)
+        {
+            IEnumerable<GameObject> taggedGameObjects = atomTagsSet
+                .Where(atomTags => atomTags.HasTag(tag))
+                .GameObjects();
+
+            return taggedGameObjects;
+        }
+    }
 }

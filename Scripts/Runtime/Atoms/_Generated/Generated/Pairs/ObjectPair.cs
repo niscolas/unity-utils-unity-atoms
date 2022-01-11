@@ -1,21 +1,37 @@
 using System;
 using UnityEngine;
+using Object = UnityEngine.Object;
+
 namespace UnityAtoms.BaseAtoms
 {
     /// <summary>
-    /// IPair of type `&lt;UnityEngine.Object&gt;`. Inherits from `IPair&lt;UnityEngine.Object&gt;`.
+    ///     IPair of type `&lt;UnityEngine.Object&gt;`. Inherits from `IPair&lt;UnityEngine.Object&gt;`.
     /// </summary>
     [Serializable]
-    public struct ObjectPair : IPair<UnityEngine.Object>
+    public struct ObjectPair : IPair<Object>
     {
-        public UnityEngine.Object Item1 { get => _item1; set => _item1 = value; }
-        public UnityEngine.Object Item2 { get => _item2; set => _item2 = value; }
+        [SerializeField]
+        private Object _item1;
 
         [SerializeField]
-        private UnityEngine.Object _item1;
-        [SerializeField]
-        private UnityEngine.Object _item2;
+        private Object _item2;
 
-        public void Deconstruct(out UnityEngine.Object item1, out UnityEngine.Object item2) { item1 = Item1; item2 = Item2; }
+        public Object Item1
+        {
+            get => _item1;
+            set => _item1 = value;
+        }
+
+        public Object Item2
+        {
+            get => _item2;
+            set => _item2 = value;
+        }
+
+        public void Deconstruct(out Object item1, out Object item2)
+        {
+            item1 = Item1;
+            item2 = Item2;
+        }
     }
 }

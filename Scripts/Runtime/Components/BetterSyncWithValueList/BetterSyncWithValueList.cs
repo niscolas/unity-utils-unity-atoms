@@ -1,5 +1,4 @@
-﻿using System;
-using niscolas.UnityUtils.Core;
+﻿using niscolas.UnityUtils.Core;
 using UnityAtoms;
 using UnityEngine;
 
@@ -28,8 +27,6 @@ namespace niscolas.UnityUtils.UnityAtoms
             // MonoLifeCycle.TriggerOnMoment(gameObject, Remove, _removeMoment);
         }
 
-        protected abstract T GetSyncSubject();
-
         private void OnEnable()
         {
             _valueList.Add(_syncSubject);
@@ -39,5 +36,7 @@ namespace niscolas.UnityUtils.UnityAtoms
         {
             _valueList.Remove(_syncSubject);
         }
+
+        protected abstract T GetSyncSubject();
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
-using niscolas.UnityUtils.Core.Extensions;
 using niscolas.UnityUtils.Core;
+using niscolas.UnityUtils.Core.Extensions;
 using UnityAtoms;
 using UnityEngine;
 
