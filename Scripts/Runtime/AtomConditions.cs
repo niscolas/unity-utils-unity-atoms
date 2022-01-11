@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using niscolas.UnityExtensions;
+using niscolas.UnityUtils.Core.Extensions;
 using niscolas.UnityUtils.Core;
 using UnityAtoms;
 using UnityEngine;

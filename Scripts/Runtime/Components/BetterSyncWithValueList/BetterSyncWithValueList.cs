@@ -2,7 +2,6 @@
 using niscolas.UnityUtils.Core;
 using UnityAtoms;
 using UnityEngine;
-using UnityUtils;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {

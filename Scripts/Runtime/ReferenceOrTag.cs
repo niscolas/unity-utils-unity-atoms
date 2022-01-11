@@ -1,5 +1,5 @@
 ﻿using System;
-using niscolas.UnityExtensions;
+using niscolas.UnityUtils.Core.Extensions;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 

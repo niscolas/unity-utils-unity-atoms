@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using niscolas.UnityExtensions;
+using niscolas.UnityUtils.Core.Extensions;
 using niscolas.UnityUtils.Core;
+using niscolas.UnityUtils.Core.Extensions;
 using UnityAtoms;
 using UnityAtoms.Tags;
 using UnityEngine;
