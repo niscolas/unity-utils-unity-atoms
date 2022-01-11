@@ -3,6 +3,6 @@
 namespace niscolas.UnityUtils.UnityAtoms
 {
     [CreateAssetMenu(menuName =
-        UnityAtomsConstants.FunctionsCreateAssetMenuPrefix + "(GameObject) => Chain Function : GameObject")]
+        Constants.FunctionsCreateAssetMenuPrefix + "(GameObject) => Chain Function : GameObject")]
     public class GameObjectChainFunction : BaseChainFunction<GameObject> { }
 }

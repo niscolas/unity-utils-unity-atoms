@@ -2,8 +2,7 @@
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    [EditorIcon("atom-icon-teal")]
-    public abstract class VoidCondition : AtomCondition<Void>
+    public abstract class VoidAtomCondition : AtomCondition<Void>
     {
         public abstract bool Call();
 

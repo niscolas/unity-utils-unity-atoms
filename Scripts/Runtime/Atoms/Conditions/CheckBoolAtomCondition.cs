@@ -3,8 +3,10 @@ using UnityEngine;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    [CreateAssetMenu(menuName = UnityAtomsConstants.ConditionsCreateAssetMenuPrefix + "(bool) => Is True?")]
-    public class CheckBool : BoolCondition
+    [CreateAssetMenu(
+        menuName = Constants.ConditionsCreateAssetMenuPrefix + "(bool) => Is True?",
+        order = Constants.CreateAssetMenuOrder)]
+    public class CheckBoolAtomCondition : BoolCondition
     {
         [SerializeField]
         private bool invert;

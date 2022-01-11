@@ -6,12 +6,12 @@ namespace niscolas.UnityUtils.UnityAtoms
 {
     [EditorIcon("atom-icon-teal")]
     [CreateAssetMenu(menuName =
-        UnityAtomsConstants.ConditionsCreateAssetMenuPrefix + "(GameObject) => Equals?")]
-    public class CheckEqualsGameObject : BaseCheckEquals<GameObjectReference, GameObjectReference, GameObject>
+        Constants.ConditionsCreateAssetMenuPrefix + "(GameObject) => Equals?")]
+    public class CheckEqualsGameObjectAtomCondition : BaseCheckEqualsAtomCondition<GameObjectReference, GameObjectReference, GameObject>
     {
         protected override bool Inner_Call(GameObject operand2)
         {
-            return operand1.Value == operand2;
+            return _operand1.Value == operand2;
         }
 
         protected override GameObject GetConverted(GameObjectReference fixedOperand2)

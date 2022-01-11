@@ -8,8 +8,9 @@ using UnityEngine.Serialization;
 namespace UnityAtomsUtils.Conditions
 {
     [CreateAssetMenu(
-        menuName = UnityAtomsConstants.ConditionsCreateAssetMenuPrefix + "(GameObject) => Has Tag?")]
-    public class HasTag : AtomCondition<GameObject>
+        menuName = Constants.ConditionsCreateAssetMenuPrefix + "(GameObject) => Has Tag?",
+        order = Constants.CreateAssetMenuOrder)]
+    public class HasTagAtomCondition : AtomCondition<GameObject>
     {
         [FormerlySerializedAs("mustHaveTag")]
         [SerializeField]

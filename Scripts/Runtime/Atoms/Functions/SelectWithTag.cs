@@ -6,7 +6,7 @@ using UnityEngine;
 namespace niscolas.UnityUtils.UnityAtoms
 {
     [CreateAssetMenu(
-        menuName = UnityAtomsConstants.FunctionsCreateAssetMenuPrefix + "(GameObject) => Select With Tag : GameObject")]
+        menuName = Constants.FunctionsCreateAssetMenuPrefix + "(GameObject) => Select With Tag : GameObject")]
     public class SelectWithTag : GameObjectGameObjectFunction
     {
         [SerializeField]

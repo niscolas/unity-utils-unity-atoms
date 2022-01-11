@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 namespace niscolas.UnityUtils.UnityAtoms
 {
     [CreateAssetMenu(
-        menuName = UnityAtomsConstants.ConditionsCreateAssetMenuPrefix + "() => Is Current Scene?")]
-    public class IsCurrentSceneAtomCondition : VoidCondition
+        menuName = Constants.ConditionsCreateAssetMenuPrefix + "() => Is Current Scene?",
+        order = Constants.CreateAssetMenuOrder)]
+    public class IsCurrentSceneAtomCondition : VoidAtomCondition
     {
         [SerializeField]
         private SceneFieldReference _testScene;

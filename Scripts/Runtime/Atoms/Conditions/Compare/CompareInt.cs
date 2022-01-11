@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    [CreateAssetMenu(menuName = UnityAtomsConstants.ConditionsCreateAssetMenuPrefix + "(int) => Compare?")]
+    [CreateAssetMenu(menuName = Constants.ConditionsCreateAssetMenuPrefix + "(int) => Compare?")]
     public class CompareInt : BaseCompare<IntReference, IntReference, int>
     {
         protected override bool Inner_Call(int operand2)

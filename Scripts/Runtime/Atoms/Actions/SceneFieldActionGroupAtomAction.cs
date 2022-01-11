@@ -5,7 +5,7 @@ using UnityEngine;
 namespace niscolas.UnityUtils.Extras
 {
     [CreateAssetMenu(
-        menuName = UnityAtomsConstants.ActionsCreateAssetMenuPrefix + "(SceneField) => Scene Field Action Group")]
+        menuName = Constants.ActionsCreateAssetMenuPrefix + "(SceneField) => Scene Field Action Group")]
     public class SceneFieldActionGroupAtomAction : ActionGroupAtomAction<
         SceneField,
         SceneFieldPair,
