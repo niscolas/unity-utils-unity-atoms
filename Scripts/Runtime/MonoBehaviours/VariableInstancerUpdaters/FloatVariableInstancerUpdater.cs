@@ -1,6 +1,6 @@
 ﻿using UnityAtoms.BaseAtoms;
 
-namespace Plugins.UnityAtomsUtils.Scripts.MonoBehaviourHelpers.VariableInstancerUpdater
+namespace niscolas.UnityUtils.UnityAtoms
 {
     public class FloatVariableInstancerUpdater : VariableInstancerUpdater
     <

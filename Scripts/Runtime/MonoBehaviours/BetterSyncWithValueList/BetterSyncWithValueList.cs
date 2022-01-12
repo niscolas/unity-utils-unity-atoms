@@ -12,10 +12,10 @@ namespace niscolas.UnityUtils.UnityAtoms
         private L _valueList;
 
         [SerializeField]
-        private MonoCallbackType _addMoment = MonoCallbackType.OnEnable;
+        private MonoBehaviourEventType _addMoment = MonoBehaviourEventType.OnEnable;
 
         [SerializeField]
-        private MonoCallbackType _removeMoment = MonoCallbackType.OnDisable;
+        private MonoBehaviourEventType _removeMoment = MonoBehaviourEventType.OnDisable;
 
         private T _syncSubject;
 

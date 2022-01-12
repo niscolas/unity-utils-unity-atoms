@@ -1,13 +1,13 @@
-﻿using UnityAtoms;
-using UnityAtoms.BaseAtoms;
+﻿using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    [EditorIcon("atom-icon-teal")]
     [CreateAssetMenu(menuName =
         Constants.ConditionsCreateAssetMenuPrefix + "(GameObject) => Equals?")]
-    public class CheckEqualsGameObjectAtomCondition : BaseCheckEqualsAtomCondition<GameObjectReference, GameObjectReference, GameObject>
+    public class
+        CheckEqualsGameObjectAtomCondition : BaseCheckEqualsAtomCondition<GameObjectReference, GameObjectReference,
+            GameObject>
     {
         protected override bool Inner_Call(GameObject operand2)
         {

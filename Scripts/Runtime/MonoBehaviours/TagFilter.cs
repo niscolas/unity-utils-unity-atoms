@@ -16,7 +16,7 @@ namespace niscolas.UnityUtils.UnityAtoms
 
         [Required]
         [SerializeField]
-        private List<StringConstant> tags;
+        private List<StringConstant> _tags;
 
         [ShowIf(nameof(ShowLogicalOperator))]
         [SerializeField]
@@ -26,7 +26,7 @@ namespace niscolas.UnityUtils.UnityAtoms
         [SerializeField]
         private UnityEvent<GameObject> passedFilterResponse;
 
-        private bool ShowLogicalOperator => tags.Count > 1;
+        private bool ShowLogicalOperator => _tags.Count > 1;
 
         public void Filter(GameObject otherGameObject)
         {
@@ -58,9 +58,9 @@ namespace niscolas.UnityUtils.UnityAtoms
 
         private bool CheckTagsAreValid(GameObject otherGameObject)
         {
-            if (tags.Count == 1)
+            if (_tags.Count == 1)
             {
-                return otherGameObject.HasTag(tags[0]);
+                return otherGameObject.HasTag(_tags[0]);
             }
 
             bool tagsAreValid = false;
@@ -68,11 +68,11 @@ namespace niscolas.UnityUtils.UnityAtoms
             switch (logicalOperator)
             {
                 case LogicalOperator.And:
-                    tagsAreValid = otherGameObject.HasAllTags(tags.Select(currentTag => currentTag.Value));
+                    tagsAreValid = otherGameObject.HasAllTags(_tags.Select(currentTag => currentTag.Value));
                     break;
 
                 case LogicalOperator.Or:
-                    tagsAreValid = otherGameObject.HasAnyTag(tags);
+                    tagsAreValid = otherGameObject.HasAnyTag(_tags);
                     break;
             }
 

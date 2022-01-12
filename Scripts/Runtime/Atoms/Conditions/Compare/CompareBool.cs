@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    [EditorIcon("atom-icon-teal")]
     [CreateAssetMenu(menuName = Constants.ConditionsCreateAssetMenuPrefix + "(bool) => Compare?")]
     public class CompareBool : BaseCompare<BoolReference, BoolReference, bool>
     {

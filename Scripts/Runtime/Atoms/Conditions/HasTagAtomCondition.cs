@@ -1,11 +1,10 @@
 ﻿using System.Linq;
-using niscolas.UnityUtils.UnityAtoms;
 using UnityAtoms;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace UnityAtomsUtils.Conditions
+namespace niscolas.UnityUtils.UnityAtoms
 {
     [CreateAssetMenu(
         menuName = Constants.ConditionsCreateAssetMenuPrefix + "(GameObject) => Has Tag?",

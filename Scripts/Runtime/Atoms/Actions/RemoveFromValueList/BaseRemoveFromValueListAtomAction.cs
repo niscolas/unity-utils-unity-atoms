@@ -3,16 +3,16 @@ using UnityEngine;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    public abstract class BaseRemoveFromValueList<T, E, VL> : AtomAction<T>
+    public abstract class BaseRemoveFromValueListAtomAction<T, E, VL> : AtomAction<T>
         where VL : AtomValueList<T, E>
         where E : AtomEvent<T>
     {
         [SerializeField]
-        private VL valueList;
+        private VL _valueList;
 
         public override void Do(T element)
         {
-            valueList.Remove(element);
+            _valueList.Remove(element);
         }
     }
 }

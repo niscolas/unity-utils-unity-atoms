@@ -1,8 +1,7 @@
-﻿using niscolas.UnityUtils.UnityAtoms;
-using UnityAtoms.SceneMgmt;
+﻿using UnityAtoms.SceneMgmt;
 using UnityEngine;
 
-namespace niscolas.UnityUtils.Extras
+namespace niscolas.UnityUtils.UnityAtoms
 {
     [CreateAssetMenu(
         menuName = Constants.ActionsCreateAssetMenuPrefix + "(SceneField) => Scene Field Action Group")]

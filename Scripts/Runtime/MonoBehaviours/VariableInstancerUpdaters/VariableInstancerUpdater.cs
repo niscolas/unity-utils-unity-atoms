@@ -1,7 +1,7 @@
 ﻿using UnityAtoms;
 using UnityEngine;
 
-namespace Plugins.UnityAtomsUtils.Scripts.MonoBehaviourHelpers.VariableInstancerUpdater
+namespace niscolas.UnityUtils.UnityAtoms
 {
     public class VariableInstancerUpdater<V, P, T, E1, E2, F, TVi> : MonoBehaviour
         where V : AtomVariable<T, P, E1, E2, F>

@@ -1,10 +1,9 @@
-﻿using niscolas.UnityUtils.UnityAtoms;
-using Sirenix.OdinInspector;
+﻿using Sirenix.OdinInspector;
 using UnityAtoms;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace niscolas.UnityUtils.Extras
+namespace niscolas.UnityUtils.UnityAtoms
 {
     public abstract class ActionGroupAtomAction<T, P, C, V, E1, E2, F, VI, TR> : AtomAction<T>
         where TR : AtomReference<T, P, C, V, E1, E2, F, VI>
