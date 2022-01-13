@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    public abstract class VariableInstancerUpdaterMB<V, P, T, E1, E2, F, TVi> : CachedMonoBehaviour
+    public abstract class VariableInstancerUpdaterMB<V, P, T, E1, E2, F, TVi> : CachedMB
         where V : AtomVariable<T, P, E1, E2, F>
         where P : struct, IPair<T>
         where E1 : AtomEvent<T>

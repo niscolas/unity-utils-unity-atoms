@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    public abstract class BaseAtomFunctionMB<T1, T2> : CachedMonoBehaviour
+    public abstract class BaseAtomFunctionMB<T1, T2> : CachedMB
     {
         [SerializeField]
         private AtomFunction<T1, T2> _function;

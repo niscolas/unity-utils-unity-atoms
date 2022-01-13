@@ -3,5 +3,5 @@
 namespace niscolas.UnityUtils.UnityAtoms
 {
     [AddComponentMenu(Constants.AddComponentMenuPrefix + "Float Float" + NiceClassSuffix)]
-    public class FloatFloatBaseAtomFunctionMb : BaseAtomFunctionMB<float, float> { }
+    public class FloatFloatBaseAtomFunctionMB : BaseAtomFunctionMB<float, float> { }
 }

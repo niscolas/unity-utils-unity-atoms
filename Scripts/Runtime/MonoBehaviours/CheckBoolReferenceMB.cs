@@ -6,7 +6,7 @@ using UnityEngine.Events;
 namespace niscolas.UnityUtils.UnityAtoms
 {
     [AddComponentMenu(Constants.AddComponentMenuPrefix + "Check Bool Reference")]
-    public class CheckBoolReferenceMB : CachedMonoBehaviour
+    public class CheckBoolReferenceMB : CachedMB
     {
         [SerializeField]
         private BoolReference _value;

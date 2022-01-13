@@ -6,7 +6,7 @@ using UnityEngine.Events;
 namespace niscolas.UnityUtils.UnityAtoms
 {
     [AddComponentMenu(Constants.AddComponentMenuPrefix + "Filtered Action")]
-    public class FilteredActionMB : CachedMonoBehaviour
+    public class FilteredActionMB : CachedMB
     {
         [SerializeField]
         private AtomFunction<GameObject, GameObject> _selectGameObjectFunction;

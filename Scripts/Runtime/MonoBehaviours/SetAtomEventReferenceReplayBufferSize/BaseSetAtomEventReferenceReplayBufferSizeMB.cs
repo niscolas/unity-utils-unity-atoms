@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    public abstract class BaseSetAtomEventReferenceReplayBufferSizeMB<T, V, E, VI, EI, ER> : CachedMonoBehaviour
+    public abstract class BaseSetAtomEventReferenceReplayBufferSizeMB<T, V, E, VI, EI, ER> : CachedMB
         where E : AtomEvent<T>
         where EI : AtomEventInstancer<T, E>
         where V : IGetOrCreateEvent, ISetEvent

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    public abstract class SaveTransformMB : CachedMonoBehaviour
+    public abstract class SaveTransformMB : CachedMB
     {
         [SerializeField]
         private Vector3Reference _saveTarget;

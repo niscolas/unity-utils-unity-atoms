@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    public abstract class BaseConditionCheckerMB<T, P, C, V, E1, E2, F, VI, TR> : CachedMonoBehaviour
+    public abstract class BaseConditionCheckerMB<T, P, C, V, E1, E2, F, VI, TR> : CachedMB
         where TR : AtomReference<T, P, C, V, E1, E2, F, VI>
         where P : struct, IPair<T>
         where C : AtomBaseVariable<T>

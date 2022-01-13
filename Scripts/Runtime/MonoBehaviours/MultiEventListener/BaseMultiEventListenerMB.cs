@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    public abstract class BaseMultiEventListenerMB<T, E, ER> : CachedMonoBehaviour, IAtomListener<T>
+    public abstract class BaseMultiEventListenerMB<T, E, ER> : CachedMB, IAtomListener<T>
         where E : AtomEvent<T>
         where ER : IGetEvent, ISetEvent, new()
     {

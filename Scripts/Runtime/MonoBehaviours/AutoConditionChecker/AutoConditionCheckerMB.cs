@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    public abstract class AutoConditionCheckerMB<T> : AutoTriggerMonoBehaviour
+    public abstract class AutoConditionCheckerMB<T> : AutoTriggerMB
     {
         [SerializeField]
         protected AtomConditions<T> _conditions;

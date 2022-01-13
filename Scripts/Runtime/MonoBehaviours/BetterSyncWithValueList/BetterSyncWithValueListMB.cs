@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    public abstract class BetterSyncWithValueListMB<T, E, L> : CachedMonoBehaviour
+    public abstract class BetterSyncWithValueListMB<T, E, L> : CachedMB
         where E : AtomEvent<T>
         where L : AtomValueList<T, E>
     {

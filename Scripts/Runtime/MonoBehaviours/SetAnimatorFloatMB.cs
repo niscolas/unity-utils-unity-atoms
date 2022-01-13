@@ -6,7 +6,7 @@ using UnityEngine;
 namespace niscolas.UnityUtils.UnityAtoms
 {
     [AddComponentMenu(Constants.AddComponentMenuPrefix + "Set Animator Float")]
-    public class SetAnimatorFloatMB : CachedMonoBehaviour
+    public class SetAnimatorFloatMB : CachedMB
     {
         [Required, SerializeField]
         private Animator _animator;
