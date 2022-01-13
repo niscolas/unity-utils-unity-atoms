@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    public abstract class BetterSyncWithValueList<T, E, L> : MonoBehaviour
+    public abstract class BetterSyncWithValueListMB<T, E, L> : CachedMonoBehaviour
         where E : AtomEvent<T>
         where L : AtomValueList<T, E>
     {
@@ -17,11 +17,14 @@ namespace niscolas.UnityUtils.UnityAtoms
         [SerializeField]
         private MonoBehaviourEventType _removeMoment = MonoBehaviourEventType.OnDisable;
 
+        public const string NiceClassSuffix = " Better Sync with Value List";
+
         private T _syncSubject;
 
         // TODO fix mono lifecycle
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             _syncSubject = GetSyncSubject();
             // MonoLifeCycle.TriggerOnMoment(gameObject, Add, _addMoment);
             // MonoLifeCycle.TriggerOnMoment(gameObject, Remove, _removeMoment);

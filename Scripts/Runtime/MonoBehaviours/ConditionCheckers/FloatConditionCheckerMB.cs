@@ -1,8 +1,10 @@
 ﻿using UnityAtoms.BaseAtoms;
+using UnityEngine;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    public class FloatConditionChecker : BaseConditionChecker<
+    [AddComponentMenu(Constants.AddComponentMenuPrefix + "(Float)" + NiceClassSuffix)]
+    public class FloatConditionCheckerMB : BaseConditionCheckerMB<
         float,
         FloatPair,
         FloatConstant,

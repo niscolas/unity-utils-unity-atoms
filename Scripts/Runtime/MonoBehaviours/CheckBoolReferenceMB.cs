@@ -1,10 +1,12 @@
-﻿using UnityAtoms.BaseAtoms;
+﻿using niscolas.UnityUtils.Core;
+using UnityAtoms.BaseAtoms;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    public class CheckBoolReference : MonoBehaviour
+    [AddComponentMenu(Constants.AddComponentMenuPrefix + "Check Bool Reference")]
+    public class CheckBoolReferenceMB : CachedMonoBehaviour
     {
         [SerializeField]
         private BoolReference _value;

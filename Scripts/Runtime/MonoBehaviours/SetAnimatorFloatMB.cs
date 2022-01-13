@@ -5,7 +5,8 @@ using UnityEngine;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    public class SetAnimatorFloat : CachedMonoBehaviour
+    [AddComponentMenu(Constants.AddComponentMenuPrefix + "Set Animator Float")]
+    public class SetAnimatorFloatMB : CachedMonoBehaviour
     {
         [Required, SerializeField]
         private Animator _animator;

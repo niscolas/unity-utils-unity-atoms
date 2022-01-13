@@ -1,8 +1,10 @@
 ﻿using UnityAtoms.BaseAtoms;
+using UnityEngine;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    public class SetBoolAtomEventReferenceReplayBufferSize : BaseSetAtomEventReferenceReplayBufferSize<
+    [AddComponentMenu(Constants.AddComponentMenuPrefix + "(Bool)" + NiceClassSuffix)]
+    public class SetBoolAtomEventReferenceReplayBufferSizeMB : BaseSetAtomEventReferenceReplayBufferSizeMB<
         bool,
         BoolVariable,
         BoolEvent,

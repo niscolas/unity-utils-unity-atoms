@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    public abstract class BaseMultiEventListener<T, E, ER> : CachedMonoBehaviour, IAtomListener<T>
+    public abstract class BaseMultiEventListenerMB<T, E, ER> : CachedMonoBehaviour, IAtomListener<T>
         where E : AtomEvent<T>
         where ER : IGetEvent, ISetEvent, new()
     {
@@ -18,6 +18,8 @@ namespace niscolas.UnityUtils.UnityAtoms
 
         [SerializeField]
         private UnityEvent<T> _unityEventResponse;
+
+        public const string NiceClassSuffix = " Multi Event Listener";
 
         private void OnEnable()
         {

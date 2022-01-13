@@ -5,12 +5,13 @@ using UnityEngine.Events;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    public class FilteredAction : CachedMonoBehaviour
+    [AddComponentMenu(Constants.AddComponentMenuPrefix + "Filtered Action")]
+    public class FilteredActionMB : CachedMonoBehaviour
     {
         [SerializeField]
         private AtomFunction<GameObject, GameObject> _selectGameObjectFunction;
 
-        [Header("Events")]
+        [Header(HeaderTitles.Events)]
         [SerializeField]
         private UnityEvent<GameObject> _onFiltered;
 

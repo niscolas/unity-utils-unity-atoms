@@ -1,9 +1,10 @@
-﻿using UnityAtoms;
+﻿using niscolas.UnityUtils.Core;
+using UnityAtoms;
 using UnityEngine;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    public class VariableInstancerUpdater<V, P, T, E1, E2, F, TVi> : MonoBehaviour
+    public abstract class VariableInstancerUpdaterMB<V, P, T, E1, E2, F, TVi> : CachedMonoBehaviour
         where V : AtomVariable<T, P, E1, E2, F>
         where P : struct, IPair<T>
         where E1 : AtomEvent<T>
@@ -14,10 +15,14 @@ namespace niscolas.UnityUtils.UnityAtoms
         [SerializeField]
         private TVi _instancer;
 
+        public const string NiceClassSuffix = " Variable Instancer Updater";
+
         private E1 _instancerEvent;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
+
             if (!_instancer)
             {
                 _instancer = GetComponent<TVi>();

@@ -1,8 +1,10 @@
 ﻿using UnityAtoms.BaseAtoms;
+using UnityEngine;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    public class FloatVariableInstancerUpdater : VariableInstancerUpdater
+    [AddComponentMenu(Constants.AddComponentMenuPrefix + "Float" + NiceClassSuffix)]
+    public class FloatVariableInstancerUpdaterMB : VariableInstancerUpdaterMB
     <
         FloatVariable,
         FloatPair,

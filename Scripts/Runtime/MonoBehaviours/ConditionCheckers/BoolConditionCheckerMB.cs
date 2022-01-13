@@ -1,8 +1,10 @@
 ﻿using UnityAtoms.BaseAtoms;
+using UnityEngine;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    public class BoolConditionChecker : BaseConditionChecker<
+    [AddComponentMenu(Constants.AddComponentMenuPrefix + "(Bool)" + NiceClassSuffix)]
+    public class BoolConditionCheckerMB : BaseConditionCheckerMB<
         bool,
         BoolPair,
         BoolConstant,

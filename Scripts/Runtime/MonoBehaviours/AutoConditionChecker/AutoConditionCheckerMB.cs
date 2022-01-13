@@ -4,28 +4,21 @@ using UnityEngine.Events;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    public abstract class AutoConditionChecker<T> : CachedMonoBehaviour
+    public abstract class AutoConditionCheckerMB<T> : AutoTriggerMonoBehaviour
     {
-        [SerializeField]
-        private MonoBehaviourEventType _conditionCheckMoment = MonoBehaviourEventType.Awake;
-
         [SerializeField]
         protected AtomConditions<T> _conditions;
 
-        [Header("Events")]
+        [Header(HeaderTitles.Events)]
         [SerializeField]
         private UnityEvent _onSuccess;
 
         [SerializeField]
         private UnityEvent _onFailure;
 
-        protected override void Awake()
-        {
-            base.Awake();
-            MonoHooksManagerMonoBehaviour.AutoTrigger(_gameObject, CheckEnvironment, _conditionCheckMoment);
-        }
+        public const string NiceClassSuffix = " Auto Condition Checker";
 
-        protected virtual void CheckEnvironment()
+        public override void Do()
         {
             if (_conditions.CallAll(default))
 

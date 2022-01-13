@@ -9,7 +9,8 @@ using UnityEngine.Events;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    public class TagFilter : MonoBehaviour
+    [AddComponentMenu(Constants.AddComponentMenuPrefix + "Tag Filter")]
+    public class TagFilterMB : MonoBehaviour
     {
         [SerializeField]
         private bool _filterRoot;
@@ -20,11 +21,11 @@ namespace niscolas.UnityUtils.UnityAtoms
 
         [ShowIf(nameof(ShowLogicalOperator))]
         [SerializeField]
-        private LogicalOperator logicalOperator;
+        private LogicalOperator _logicalOperator;
 
-        [Title("Events")]
+        [Title(HeaderTitles.Events)]
         [SerializeField]
-        private UnityEvent<GameObject> passedFilterResponse;
+        private UnityEvent<GameObject> _onPassed;
 
         private bool ShowLogicalOperator => _tags.Count > 1;
 
@@ -43,7 +44,7 @@ namespace niscolas.UnityUtils.UnityAtoms
                 return;
             }
 
-            passedFilterResponse?.Invoke(otherGameObject);
+            _onPassed?.Invoke(otherGameObject);
         }
 
         public void Filter(Collider otherCollider)
@@ -65,7 +66,7 @@ namespace niscolas.UnityUtils.UnityAtoms
 
             bool tagsAreValid = false;
 
-            switch (logicalOperator)
+            switch (_logicalOperator)
             {
                 case LogicalOperator.And:
                     tagsAreValid = otherGameObject.HasAllTags(_tags.Select(currentTag => currentTag.Value));

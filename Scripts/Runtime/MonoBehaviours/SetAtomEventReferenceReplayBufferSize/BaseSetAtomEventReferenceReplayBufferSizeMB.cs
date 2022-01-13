@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    public abstract class BaseSetAtomEventReferenceReplayBufferSize<T, V, E, VI, EI, ER> : CachedMonoBehaviour
+    public abstract class BaseSetAtomEventReferenceReplayBufferSizeMB<T, V, E, VI, EI, ER> : CachedMonoBehaviour
         where E : AtomEvent<T>
         where EI : AtomEventInstancer<T, E>
         where V : IGetOrCreateEvent, ISetEvent
@@ -17,6 +17,8 @@ namespace niscolas.UnityUtils.UnityAtoms
 
         [SerializeField]
         private IntReference _size = new();
+
+        public const string NiceClassSuffix = "Set Atom Event Reference Replay Buffer Size";
 
         private void Start()
         {

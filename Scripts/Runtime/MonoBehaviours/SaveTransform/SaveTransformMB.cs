@@ -1,10 +1,11 @@
 ﻿using System;
+using niscolas.UnityUtils.Core;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    public abstract class SaveTransform : MonoBehaviour
+    public abstract class SaveTransformMB : CachedMonoBehaviour
     {
         [SerializeField]
         private Vector3Reference _saveTarget;

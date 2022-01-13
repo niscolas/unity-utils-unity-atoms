@@ -1,12 +1,12 @@
-﻿using Sirenix.OdinInspector;
+﻿using niscolas.UnityUtils.Core;
+using Sirenix.OdinInspector;
 using UnityAtoms;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
-    public class BaseConditionChecker<T, P, C, V, E1, E2, F, VI, TR> : MonoBehaviour
+    public abstract class BaseConditionCheckerMB<T, P, C, V, E1, E2, F, VI, TR> : CachedMonoBehaviour
         where TR : AtomReference<T, P, C, V, E1, E2, F, VI>
         where P : struct, IPair<T>
         where C : AtomBaseVariable<T>
@@ -22,14 +22,14 @@ namespace niscolas.UnityUtils.UnityAtoms
         [SerializeField]
         private TR _fixedInput;
 
-        [Title("Events")]
-        [FormerlySerializedAs("_ifTrue")]
+        [Title(HeaderTitles.Events)]
         [SerializeField]
         private UnityEvent<T> _onConditionMet;
 
-        [FormerlySerializedAs("_ifFalse")]
         [SerializeField]
         private UnityEvent<T> _onConditionFailed;
+
+        public const string NiceClassSuffix = " Condition Checker";
 
         public void Check(T input)
         {
