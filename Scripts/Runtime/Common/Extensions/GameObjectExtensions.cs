@@ -61,7 +61,7 @@ namespace niscolas.UnityUtils.UnityAtoms
                 return default;
             }
 
-            HashSet<GameObject> foundGameObjects = new();
+            HashSet<GameObject> foundGameObjects = new HashSet<GameObject>();
             if (startGameObject.HasTag(tag))
             {
                 foundGameObjects.Add(startGameObject);

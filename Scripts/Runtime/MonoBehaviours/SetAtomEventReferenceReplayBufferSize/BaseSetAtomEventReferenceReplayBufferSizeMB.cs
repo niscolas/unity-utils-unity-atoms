@@ -16,7 +16,7 @@ namespace niscolas.UnityUtils.UnityAtoms
         private ER _eventReference;
 
         [SerializeField]
-        private IntReference _size = new();
+        private IntReference _size = new IntReference();
 
         public const string NiceClassSuffix = "Set Atom Event Reference Replay Buffer Size";
 
