@@ -1,5 +1,4 @@
 ﻿using niscolas.UnityUtils.Core;
-using Sirenix.OdinInspector;
 using UnityAtoms;
 using UnityEngine;
 using UnityEngine.Events;
@@ -22,7 +21,7 @@ namespace niscolas.UnityUtils.UnityAtoms
         [SerializeField]
         private TR _fixedInput;
 
-        [Title(HeaderTitles.Events)]
+        [Header(HeaderTitles.Events)]
         [SerializeField]
         private UnityEvent<T> _onConditionMet;
 

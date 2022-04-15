@@ -1,5 +1,4 @@
 ﻿using niscolas.UnityUtils.Core;
-using Sirenix.OdinInspector;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
@@ -8,7 +7,12 @@ namespace niscolas.UnityUtils.UnityAtoms
     [AddComponentMenu(Constants.AddComponentMenuPrefix + "Set Animator Float")]
     public class SetAnimatorFloatMB : CachedMB
     {
-        [Required, SerializeField]
+#if ODIN_INSPECTOR
+        [Sirenix.OdinInspector.Required]
+#elif NAUGHTY_ATTRIBUTES
+        [NaughtyAttributes.Required]
+#endif
+        [SerializeField]
         private Animator _animator;
 
         [SerializeField]

@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using Sirenix.OdinInspector;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
@@ -13,13 +12,8 @@ namespace niscolas.UnityUtils.UnityAtoms
         private StringConstant tag;
 
         [SerializeField]
-        private bool _selectFromRoot;
-
-        [HideIf(nameof(_selectFromRoot))]
-        [SerializeField]
         private bool searchInParents = true;
 
-        [HideIf(nameof(_selectFromRoot))]
         [SerializeField]
         private bool searchInChildren = true;
 
@@ -32,18 +26,9 @@ namespace niscolas.UnityUtils.UnityAtoms
 
             GameObject result;
 
-            if (_selectFromRoot)
-            {
-                result = entry
-                    .FindWithTagFromRoot(tag.Value)
-                    .FirstOrDefault();
-            }
-            else
-            {
-                result = entry
-                    .FindWithTagInHierarchy(tag.Value, searchInParents, searchInChildren)
-                    .FirstOrDefault();
-            }
+            result = entry
+                .FindWithTagInHierarchy(tag.Value, searchInParents, searchInChildren)
+                .FirstOrDefault();
 
             return result;
         }

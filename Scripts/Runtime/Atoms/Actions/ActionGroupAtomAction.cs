@@ -1,5 +1,4 @@
-﻿using Sirenix.OdinInspector;
-using UnityAtoms;
+﻿using UnityAtoms;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -30,7 +29,11 @@ namespace niscolas.UnityUtils.UnityAtoms
         [SerializeField]
         private UnityEvent<T> _onAfterActions;
 
-        [Button]
+#if ODIN_INSPECTOR
+        [Sirenix.OdinInspector.Button]
+#elif NAUGHTY_ATTRIBUTES
+        [NaughtyAttributes.Button]
+#endif
         public override void Do()
         {
             _onBeforeActions?.Invoke(_staticValue.Value);

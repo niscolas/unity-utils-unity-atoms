@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using niscolas.UnityUtils.Core;
-using Sirenix.OdinInspector;
 using UnityAtoms.BaseAtoms;
 using UnityAtoms.Tags;
 using UnityEngine;
@@ -12,18 +11,23 @@ namespace niscolas.UnityUtils.UnityAtoms
     [AddComponentMenu(Constants.AddComponentMenuPrefix + "Tag Filter")]
     public class TagFilterMB : MonoBehaviour
     {
-        [SerializeField]
-        private bool _filterRoot;
-
-        [Required]
+#if ODIN_INSPECTOR
+        [Sirenix.OdinInspector.Required]
+#elif NAUGHTY_ATTRIBUTES
+        [NaughtyAttributes.Required]
+#endif
         [SerializeField]
         private List<StringConstant> _tags;
 
-        [ShowIf(nameof(ShowLogicalOperator))]
+#if ODIN_INSPECTOR
+        [Sirenix.OdinInspector.ShowIf(nameof(ShowLogicalOperator))]
+#elif NAUGHTY_ATTRIBUTES
+        [NaughtyAttributes.Required]
+#endif
         [SerializeField]
         private LogicalOperator _logicalOperator;
 
-        [Title(HeaderTitles.Events)]
+        [Header(HeaderTitles.Events)]
         [SerializeField]
         private UnityEvent<GameObject> _onPassed;
 
@@ -31,8 +35,7 @@ namespace niscolas.UnityUtils.UnityAtoms
 
         public void Filter(GameObject otherGameObject)
         {
-            if (!otherGameObject ||
-                _filterRoot && !otherGameObject.TryFindRoot(out otherGameObject))
+            if (!otherGameObject)
             {
                 return;
             }

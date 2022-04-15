@@ -36,20 +36,6 @@ namespace niscolas.UnityUtils.UnityAtoms
             return atomTagsSet.FilterWithTag(tag);
         }
 
-        public static IEnumerable<GameObject> FindWithTagFromRoot(this GameObject startGameObject, string tag)
-        {
-            GameObject rootGameObject = startGameObject.Root();
-
-            if (!rootGameObject)
-            {
-                return default;
-            }
-
-            IEnumerable<GameObject> taggedGameObjects = rootGameObject.FindChildrenWithTag(tag);
-
-            return taggedGameObjects;
-        }
-
         public static IEnumerable<GameObject> FindWithTagInHierarchy(
             this GameObject startGameObject,
             string tag,
@@ -113,41 +99,11 @@ namespace niscolas.UnityUtils.UnityAtoms
             return taggedChildren.GetComponents<T>();
         }
 
-        public static IEnumerable<T> GetComponentsWithTagFromRoot<T>(this GameObject gameObject, string tag)
-        {
-            GameObject root = gameObject.Root();
-            IEnumerable<T> components = GetComponentsInChildrenWithTag<T>(root, tag);
-
-            return components;
-        }
-
-        public static IEnumerable<T> GetComponentsWithTagsFromRoot<T>
-        (
-            this GameObject startGameObject, IEnumerable<string> tags, AtomConditionOperators tagOperator
-        )
-        {
-            IEnumerable<T> components =
-                FindChildrenWithTags(startGameObject.Root(), tags, tagOperator)
-                    .GetComponents<T>();
-
-            return components;
-        }
-
         public static bool HasAllTags(this GameObject gameObject, IEnumerable<string> tags)
         {
             return AtomTags
                 .GetTagsForGameObject(gameObject)
                 .HasAllTags(tags);
-        }
-
-        public static bool RootHasTag(this GameObject gameObject, string tag)
-        {
-            if (!gameObject.TryFindRoot(out GameObject root))
-            {
-                return false;
-            }
-
-            return root.HasTag(tag);
         }
     }
 }
