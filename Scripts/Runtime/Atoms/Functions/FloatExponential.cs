@@ -1,6 +1,5 @@
 ﻿using UnityAtoms.BaseAtoms;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace niscolas.UnityUtils.UnityAtoms
 {
